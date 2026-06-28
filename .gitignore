@@ -1,10 +1,11 @@
 # Ignore everything by default; we explicitly opt-in only the folders we want.
 *
 
-# Keep this file itself and top-level documentation in version control.
+# Keep this file itself and top-level project files in version control.
 !.gitignore
 !README.md
 !AGENTS.md
+!LICENSE
 
 # Whitelist only these three top-level folders and their contents.
 !kitty/
