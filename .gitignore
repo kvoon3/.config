@@ -1,0 +1,24 @@
+# Ignore everything by default; we explicitly opt-in only the folders we want.
+*
+
+# Keep this file itself in version control.
+!.gitignore
+
+# Whitelist only these three top-level folders and their contents.
+!kitty/
+!kitty/**
+!herdr/
+!herdr/**
+!karabiner/
+!karabiner/**
+
+# --- herdr: exclude runtime / generated / machine-local files ---
+herdr/*.log
+herdr/*.sock
+herdr/session.json
+herdr/release-notes.json
+
+# --- kitty: exclude backup files ---
+kitty/*.bak
+
+# --- karabiner: was previously a nested git repo; we removed its .git to track the config files directly ---

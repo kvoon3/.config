@@ -1,0 +1,15 @@
+[theme]
+name = "tokyo-night"
+
+[theme.custom]
+panel_bg = "#000000"
+text = "#dbd7ca"
+subtext0 = "#bfbaaa"
+surface0 = "#121212"
+surface1 = "#121212"
+surface_dim = "#0f1d17"
+accent = "#4d9375"
+green = "#4d9375"
+blue = "#6394bf"
+red = "#cb7676"
+yellow = "#e6cc77"
