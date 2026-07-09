@@ -16,6 +16,8 @@
 !karabiner/**
 !ghostty/
 !ghostty/**
+!git/
+!git/**
 
 # --- herdr: exclude runtime / generated / machine-local files ---
 herdr/*.log
@@ -29,3 +31,10 @@ kitty/*.bak
 
 # --- karabiner: machine-local backups; nested .git removed so parent repo tracks config ---
 karabiner/automatic_backups/
+
+# --- git: identity, credentials, machine-local UI; nested .git removed so parent tracks config ---
+git/.git/
+git/config.local
+git/kvoon9
+git/gitk
+

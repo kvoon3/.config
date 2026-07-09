@@ -1,0 +1,77 @@
+# Shared git config (safe to version).
+# Identity, SSH keys, proxy, and credential helpers live in config.local (untracked).
+# Work identity for ~/weila lives in kvoon9 (untracked).
+
+[include]
+	path = config.local
+
+[core]
+	autocrlf = false
+	compression = 9
+	whitespace = error
+	preloadindex = true
+	pager = delta
+
+# kvoon9 configuration for ~/weila directory
+[includeIf "gitdir:~/weila/"]
+	path = kvoon9
+
+[includeIf "gitdir:~/a/weila-weekly/"]
+	path = kvoon9
+
+[hub]
+	protocol = ssh
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = current
+	autoSetupRemote = true
+	followTags = true
+
+[pull]
+	default = current
+	rebase = true
+
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+
+[log]
+	abbrevCommit = true  # short commits
+	graphColors = blue,yellow,cyan,magenta,green,red
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = -taggerdate
+
+[credential "https://gitee.com"]
+	provider = generic
+
+# URL shortcuts
+[url "https://github.com/"]
+	insteadOf = "gh:"
+
+[url "https://github.com/antfu"]
+	insteadOf = "antfu:"
+
+[url "https://github.com/kvoon3/"]
+	insteadOf = "kvoon:"
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+# https://github.com/dandavison/delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	light = true      # omit for auto-detection
+	# dark = true      # omit for auto-detection
+[merge]
+	conflictStyle = zdiff3
