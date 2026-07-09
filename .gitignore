@@ -7,13 +7,15 @@
 !AGENTS.md
 !LICENSE
 
-# Whitelist only these three top-level folders and their contents.
+# Whitelist only these top-level folders and their contents.
 !kitty/
 !kitty/**
 !herdr/
 !herdr/**
 !karabiner/
 !karabiner/**
+!ghostty/
+!ghostty/**
 
 # --- herdr: exclude runtime / generated / machine-local files ---
 herdr/*.log
