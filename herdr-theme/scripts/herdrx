@@ -1,0 +1,17 @@
+#!/bin/sh
+# herdrx — run herdr with herdr-theme's appearance watcher alongside.
+#
+# Starts `herdr-theme watch` in the background (logging to watch.log in the
+# herdr-theme data dir) and kills it when herdr exits. Without dark-notify
+# installed the watcher just logs a hint and exits; herdr runs unaffected.
+LOG="${HERDR_THEME_HOME:-$HOME/.config/herdr-theme}/watch.log"
+
+herdr-theme watch >>"$LOG" 2>&1 &
+watcher=$!
+
+cleanup() { kill "$watcher" 2>/dev/null; }
+trap cleanup EXIT
+trap 'exit 129' HUP
+trap 'exit 143' TERM
+
+herdr "$@"

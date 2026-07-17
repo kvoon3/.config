@@ -1,16 +1,24 @@
-import { builtinThemes, customThemes, findTheme, matchCustomTheme } from "./themes.ts"
-import { readCurrentTheme, readCustomTheme } from "./config.ts"
+import { builtinThemes, customThemes, findTheme } from "./themes.ts"
 import { applyTheme } from "./apply.ts"
+import { readSettings } from "./auto.ts"
+import { watch } from "./watch.ts"
 import { startTui } from "./App.tsx"
 
 const HELP = `herdr-theme — switch the herdr color theme
 
 Usage:
-  herdr-theme                 Interactive picker with live preview
+  herdr-theme                 Interactive picker: configure the light/dark pair
   herdr-theme <name>          Switch directly to a theme (built-in or custom)
-  herdr-theme --list          List themes (marks the current one)
+  herdr-theme watch           Follow macOS appearance (used by herdrx; needs
+                              dark-notify: mise use -g ubi:cormacrelf/dark-notify)
+  herdr-theme --list          List themes (marks the configured light/dark pair)
   herdr-theme --keep-custom   With a built-in theme: keep [theme.custom] overrides
   herdr-theme --help          Show this help
+
+Auto switching: configure a light and a dark theme in the picker (or in
+~/.config/herdr-theme/config.json) and start herdr via herdrx — the watcher
+applies the matching theme whenever macOS changes appearance. Unset one of the
+pair (enter on a set theme in the picker) to turn auto switching off.
 
 Built-in themes come with full palettes (read from herdr's theme definitions).
 Custom themes live in ~/.config/herdr-theme/themes/*.json and are applied as a
@@ -30,24 +38,31 @@ async function main() {
     return
   }
 
-  const currentName = readCurrentTheme()
-  const currentCustom = matchCustomTheme(readCustomTheme())
-  const currentDisplay = currentCustom ?? currentName
+  if (positional[0] === "watch") {
+    await watch()
+    return
+  }
 
   if (args.includes("--list")) {
+    const settings = readSettings()
     for (const group of [builtinThemes(), customThemes()]) {
       if (group.length === 0) continue
       console.log(group[0].type === "builtin" ? "built-in:" : "custom:")
       for (const theme of group) {
-        const current = theme.name === currentDisplay
-        console.log(`${current ? "❯ " : "  "}${theme.name}${current ? " (current)" : ""}`)
+        const tags = [
+          theme.name === settings.lightTheme ? "light" : "",
+          theme.name === settings.darkTheme ? "dark" : "",
+        ]
+          .filter(Boolean)
+          .join(", ")
+        console.log(`  ${theme.name}${tags ? ` (${tags})` : ""}`)
       }
     }
     return
   }
 
   if (positional.length === 0) {
-    startTui()
+    await startTui()
     return
   }
 

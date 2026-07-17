@@ -20,11 +20,14 @@
 !git/**
 !herdr-theme/
 !herdr-theme/**
+!mise/
+!mise/**
 
 # --- herdr-theme: exclude install / build artifacts ---
 herdr-theme/node_modules/
 herdr-theme/dist/
 herdr-theme/backups/
+herdr-theme/watch.log
 
 # --- herdr: exclude runtime / generated / machine-local files ---
 herdr/*.log

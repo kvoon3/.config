@@ -1,10 +1,16 @@
 import { render, useKeyboard, useRenderer } from "@opentui/solid"
-import { createSignal, For, onCleanup } from "solid-js"
-import { builtinThemes, customThemes, matchCustomTheme, type ThemeEntry } from "./themes.ts"
-import { readCurrentTheme, readCustomTheme } from "./config.ts"
-import { applyTheme, restoreTheme } from "./apply.ts"
+import { createSignal, For } from "solid-js"
+import { builtinThemes, customThemes, type ThemeEntry } from "./themes.ts"
+import { applyTheme } from "./apply.ts"
+import {
+  autoEnabled,
+  currentMode,
+  readSettings,
+  writeSettings,
+  type Mode,
+  type Settings,
+} from "./auto.ts"
 
-const PREVIEW_DEBOUNCE_MS = 150
 const SWATCH_TOKENS = ["accent", "green", "yellow", "red", "blue", "mauve", "teal", "peach"]
 const NAME_WIDTH = 18
 
@@ -16,9 +22,14 @@ function swatches(theme: ThemeEntry): { char: string; color: string }[] {
   })
 }
 
-export function App() {
+type Row = { kind: "header"; label: string } | { kind: "theme"; theme: ThemeEntry; index: number }
+
+function slotOf(settings: Settings, mode: Mode): string | null {
+  return mode === "light" ? settings.lightTheme : settings.darkTheme
+}
+
+export function App(props: { initialTab: Mode }) {
   const renderer = useRenderer()
-  type Row = { kind: "header"; label: string } | { kind: "theme"; theme: ThemeEntry; index: number }
   const rows: Row[] = []
   let index = 0
   for (const group of [
@@ -31,92 +42,121 @@ export function App() {
   }
   const entries = rows.flatMap((r) => (r.kind === "theme" ? [r.theme] : []))
 
-  const originalName = readCurrentTheme()
-  const originalCustom = readCustomTheme()
-  const currentDisplay = matchCustomTheme(originalCustom) ?? originalName
-
-  const startIndex = Math.max(
-    0,
-    entries.findIndex((t) => t.name === currentDisplay),
-  )
-  const [selected, setSelected] = createSignal(startIndex)
+  const [tab, setTab] = createSignal<Mode>(props.initialTab)
+  const [settings, setSettings] = createSignal<Settings>(readSettings())
+  const [selected, setSelected] = createSignal(0)
   const [status, setStatus] = createSignal("")
 
-  let timer: ReturnType<typeof setTimeout> | undefined
-  onCleanup(() => timer && clearTimeout(timer))
+  function cursorToSlot(mode: Mode) {
+    const name = slotOf(settings(), mode)
+    setSelected(Math.max(0, entries.findIndex((t) => t.name === name)))
+  }
+  cursorToSlot(props.initialTab)
 
-  function preview(index: number) {
-    if (timer) clearTimeout(timer)
-    timer = setTimeout(async () => {
-      const entry = entries[index]
-      const { reloaded } = await applyTheme(entry)
-      setStatus(
-        reloaded ? `previewing: ${entry.name}` : `written: ${entry.name} (server not running)`,
-      )
-    }, PREVIEW_DEBOUNCE_MS)
+  function switchTab(next: Mode) {
+    if (next === tab()) return
+    setTab(next)
+    cursorToSlot(next)
   }
 
-  async function restoreAndExit() {
-    if (timer) clearTimeout(timer)
-    if (originalName) {
-      await restoreTheme(originalName, originalCustom)
+  /** enter: set the highlighted theme as this tab's slot (applied immediately only
+   *  when the tab matches the live system mode); pressing enter on the theme
+   *  already in the slot unsets it. */
+  async function commit() {
+    const entry = entries[selected()]
+    const next = { ...settings() }
+    const key = tab() === "light" ? "lightTheme" : "darkTheme"
+    if (next[key] === entry.name) {
+      if (!slotOf(next, tab() === "light" ? "dark" : "light")) {
+        setStatus(`cannot unset ${entry.name}: it is the last configured theme`)
+        return
+      }
+      next[key] = null
+      writeSettings(next)
+      setSettings(next)
+      setStatus(`${tab()}: unset ${entry.name}`)
+      return
     }
-    renderer.destroy()
+    next[key] = entry.name
+    writeSettings(next)
+    setSettings(next)
+    // Apply immediately only when this tab matches the live system mode;
+    // configuring the other mode's theme must not flip the UI right now.
+    if ((await currentMode()) !== tab()) {
+      setStatus(`${tab()} → ${entry.name} (saved; applies when system goes ${tab()})`)
+      return
+    }
+    const { reloaded } = await applyTheme(entry)
+    setStatus(
+      reloaded
+        ? `${tab()} → ${entry.name} (applied)`
+        : `${tab()} → ${entry.name} (written; server not running)`,
+    )
   }
 
   useKeyboard((key) => {
     const i = selected()
-    if (key.name === "up" || key.name === "k") {
-      const next = (i - 1 + entries.length) % entries.length
-      setSelected(next)
-      preview(next)
+    if (key.name === "left" || key.name === "h") {
+      switchTab("light")
+    } else if (key.name === "right" || key.name === "l" || key.name === "tab" || key.raw === "\t") {
+      switchTab(tab() === "light" ? "dark" : "light")
+    } else if (key.name === "up" || key.name === "k") {
+      setSelected((i - 1 + entries.length) % entries.length)
     } else if (key.name === "down" || key.name === "j") {
-      const next = (i + 1) % entries.length
-      setSelected(next)
-      preview(next)
+      setSelected((i + 1) % entries.length)
     } else if (key.name === "return" || key.name === "enter") {
-      if (timer) clearTimeout(timer)
-      renderer.destroy()
+      void commit()
     } else if (key.name === "escape" || key.name === "q" || (key.ctrl && key.name === "c")) {
-      void restoreAndExit()
+      renderer.destroy()
     }
   })
 
+  function tabLabel(mode: Mode) {
+    const active = tab() === mode
+    const name = slotOf(settings(), mode)
+    return (
+      <text fg={active ? "#9ece6a" : "#666666"}>
+        {active ? "❯ " : "  "}
+        <strong>{mode}</strong>
+        {name ? `: ${name}` : ""}
+      </text>
+    )
+  }
+
   return (
     <box flexDirection="column" padding={1}>
-      <text fg="#7aa2f7">
-        <strong>herdr-theme</strong>
-      </text>
+      <box flexDirection="row" gap={3}>
+        {tabLabel("light")}
+        {tabLabel("dark")}
+        <text fg="#666666">{autoEnabled(settings()) ? "auto on" : "auto off"}</text>
+      </box>
       <For each={rows}>
         {(row) => {
           if (row.kind === "header") {
             return <text fg="#666666">{row.label}</text>
           }
           const { theme, index } = row
+          const isSlot = () => theme.name === slotOf(settings(), tab())
           return (
-            <text
-              fg={
-                index === selected()
-                  ? "#9ece6a"
-                  : theme.name === currentDisplay
-                    ? "#7aa2f7"
-                    : "#cccccc"
-              }
-            >
+            <text fg={index === selected() ? "#9ece6a" : isSlot() ? "#7aa2f7" : "#cccccc"}>
               {index === selected() ? "❯ " : "  "}
               {theme.name.padEnd(NAME_WIDTH)}
-              {theme.name === currentDisplay ? "(current) " : "           "}
-              <For each={swatches(theme)}>{(s) => <span fg={s.color || undefined}>{s.char}</span>}</For>
+              {isSlot() ? "(set) " : "      "}
+              <For each={swatches(theme)}>
+                {/* span props only honor `style` (fg/bg) — a direct `fg` prop is dropped by @opentui/solid */}
+                {(s) => <span style={{ fg: s.color || undefined } as {}}>{s.char}</span>}
+              </For>
             </text>
           )
         }}
       </For>
       <text fg="#888888">{status() || " "}</text>
-      <text fg="#666666">↑/↓ or j/k preview · enter keep · esc/q restore</text>
+      <text fg="#666666">←/→/tab switch · ↑/↓ or j/k select · enter set/unset · esc/q quit</text>
     </box>
   )
 }
 
-export function startTui() {
-  render(() => <App />, { exitOnCtrlC: false })
+export async function startTui() {
+  const initialTab = await currentMode()
+  render(() => <App initialTab={initialTab} />, { exitOnCtrlC: false })
 }

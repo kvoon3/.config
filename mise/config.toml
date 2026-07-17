@@ -1,0 +1,5 @@
+[tools]
+gitu = "0"
+rust = "1"
+neovim = "0.12.4"
+"ubi:cormacrelf/dark-notify" = "latest"
