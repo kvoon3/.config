@@ -18,6 +18,13 @@
 !ghostty/**
 !git/
 !git/**
+!herdr-theme/
+!herdr-theme/**
+
+# --- herdr-theme: exclude install / build artifacts ---
+herdr-theme/node_modules/
+herdr-theme/dist/
+herdr-theme/backups/
 
 # --- herdr: exclude runtime / generated / machine-local files ---
 herdr/*.log

@@ -1,0 +1,23 @@
+{
+  "name": "vitesse-dark-soft",
+  "base": "tokyo-night",
+  "source": "https://github.com/antfu/vscode-theme-vitesse (mapped from kitty/themes/vitesse-dark-soft.conf)",
+  "colors": {
+    "accent": "#4d9375",
+    "panel_bg": "#222222",
+    "surface0": "#292929",
+    "surface1": "#303030",
+    "surface_dim": "#222222",
+    "overlay0": "#777777",
+    "overlay1": "#bfbaaa",
+    "text": "#dbd7ca",
+    "subtext0": "#bfbaaa",
+    "mauve": "#d9739f",
+    "green": "#4d9375",
+    "yellow": "#e6cc77",
+    "red": "#cb7676",
+    "blue": "#6394bf",
+    "teal": "#5eaab5",
+    "peach": "#e6cc77"
+  }
+}

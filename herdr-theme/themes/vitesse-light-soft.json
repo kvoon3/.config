@@ -1,0 +1,23 @@
+{
+  "name": "vitesse-light-soft",
+  "base": "catppuccin-latte",
+  "source": "https://github.com/antfu/vscode-theme-vitesse (mapped from kitty/themes/vitesse-light-soft.conf)",
+  "colors": {
+    "accent": "#1c6b48",
+    "panel_bg": "#f1f0e9",
+    "surface0": "#e7e5db",
+    "surface1": "#e5e5e3",
+    "surface_dim": "#e7e5db",
+    "overlay0": "#aaaaaa",
+    "overlay1": "#999999",
+    "text": "#393a34",
+    "subtext0": "#999999",
+    "mauve": "#a13865",
+    "green": "#1e754f",
+    "yellow": "#bda437",
+    "red": "#ab5959",
+    "blue": "#296aa3",
+    "teal": "#2993a3",
+    "peach": "#bda437"
+  }
+}
