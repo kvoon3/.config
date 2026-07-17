@@ -1,14 +1,13 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync, unlinkSync } from "node:fs"
 import { join } from "node:path"
 import { configPath, writeTheme } from "./config.ts"
-import type { ThemeEntry } from "./themes.ts"
+import { DATA_HOME, type ThemeEntry } from "./themes.ts"
 
 export interface ApplyResult {
   reloaded: boolean
 }
 
-const PROJECT_ROOT = join(import.meta.dir, "..")
-const BACKUP_DIR = join(PROJECT_ROOT, "backups")
+const BACKUP_DIR = join(DATA_HOME, "backups")
 const MAX_BACKUPS = 10
 
 /** Snapshot the current config before mutating it. Throttled: at most one backup per minute

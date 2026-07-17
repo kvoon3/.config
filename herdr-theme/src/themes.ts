@@ -1,6 +1,29 @@
 import { readdirSync, readFileSync } from "node:fs"
+import { homedir } from "node:os"
 import { join } from "node:path"
-import builtinData from "../data/builtin-themes.json" with { type: "json" }
+
+/**
+ * Where themes and backups live. Fixed to the dotfiles location so the compiled
+ * binary and `bun run` behave identically; override for testing.
+ */
+export const DATA_HOME =
+  process.env.HERDR_THEME_HOME ?? join(homedir(), ".config", "herdr-theme")
+
+interface BuiltinData {
+  tokens: string[]
+  themes: Record<string, ThemeColors>
+}
+
+function loadBuiltinData(): BuiltinData {
+  const path = join(DATA_HOME, "data", "builtin-themes.json")
+  try {
+    return JSON.parse(readFileSync(path, "utf8"))
+  } catch {
+    throw new Error(`cannot read ${path} — run \`bun run sync\` in the herdr-theme repo first`)
+  }
+}
+
+const builtinData = loadBuiltinData()
 
 /** The 16 color tokens herdr understands in [theme.custom]. */
 export const THEME_TOKENS = builtinData.tokens
@@ -15,8 +38,6 @@ export interface ThemeEntry {
   colors: ThemeColors
 }
 
-const PROJECT_ROOT = join(import.meta.dir, "..")
-
 export function builtinThemes(): ThemeEntry[] {
   return Object.entries(builtinData.themes).map(([name, colors]) => ({
     name,
@@ -26,7 +47,7 @@ export function builtinThemes(): ThemeEntry[] {
 }
 
 export function customThemes(): ThemeEntry[] {
-  const dir = join(PROJECT_ROOT, "themes")
+  const dir = join(DATA_HOME, "themes")
   let files: string[]
   try {
     files = readdirSync(dir).filter((f) => f.endsWith(".json"))
