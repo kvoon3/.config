@@ -30,5 +30,5 @@ font-size = 16
 # font-family = JetBrainsMonoNerdFont
 # font-family = Noto Sans SC
 # custom-shader = ~/.config/ghostty/shaders/water_ripple.glsl
-custom-shader = ./shaders/last_letter_zoom.glsl
-custom-shader = ./shaders/cursor_frozen.glsl
+# custom-shader = ./shaders/last_letter_zoom.glsl
+# custom-shader = ./shaders/cursor_frozen.glsl
