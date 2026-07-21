@@ -5,32 +5,3 @@ rust = "1"
 neovim = "0.12.4"
 "ubi:cormacrelf/dark-notify" = "latest"
 tree-sitter = "0.26.11"
-
-[tasks."fonts:ioskeley"]
-description = "Install Ioskeley Mono Term v2.0.0 for Kitty on macOS"
-run = '''
-set -eu
-
-font_dir="$HOME/Library/Fonts"
-marker="$font_dir/.ioskeley-mono-term-v2.0.0"
-
-if [ -f "$marker" ]; then
-  echo "Ioskeley Mono Term v2.0.0 is already installed"
-  exit 0
-fi
-
-work_dir=$(mktemp -d "${TMPDIR:-/tmp}/ioskeley-mono.XXXXXX")
-trap 'rm -rf "$work_dir"' EXIT
-
-curl -fL \
-  "https://github.com/ahatem/IoskeleyMono/releases/download/v2.0.0/IoskeleyMono-Term.zip" \
-  -o "$work_dir/IoskeleyMono-Term.zip"
-unzip -q "$work_dir/IoskeleyMono-Term.zip" -d "$work_dir/font"
-
-mkdir -p "$font_dir"
-cp "$work_dir/font/Normal/Unhinted/"*.ttf "$font_dir/"
-touch "$marker"
-
-echo "Installed Ioskeley Mono Term v2.0.0"
-echo "Restart Kitty to use the font"
-'''

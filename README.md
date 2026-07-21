@@ -33,3 +33,9 @@ only used as a fallback for that case:
 ```sh
 brew install cormacrelf/tap/dark-notify
 ```
+
+Kitty uses Input Mono. Install it with Homebrew:
+
+```sh
+brew install --cask font-input
+```
