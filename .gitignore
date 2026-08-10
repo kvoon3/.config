@@ -23,6 +23,8 @@
 !herdr-theme/**
 !mise/
 !mise/**
+!pi/
+!pi/**
 
 # --- herdr-theme: exclude install / build artifacts ---
 herdr-theme/node_modules/
