@@ -38,6 +38,8 @@ herdr/*.sock
 herdr/session.json
 herdr/session-history.json
 herdr/release-notes.json
+herdr/plugins.json
+herdr/.plugins.lock
 
 # --- kitty: exclude backup files ---
 kitty/*.bak
