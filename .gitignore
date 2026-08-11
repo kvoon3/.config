@@ -52,3 +52,5 @@ git/.git/
 git/config.local
 git/kvoon9
 git/gitk
+!wezterm/
+!wezterm/**

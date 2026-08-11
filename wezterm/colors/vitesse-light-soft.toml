@@ -1,0 +1,14 @@
+[metadata]
+name = "Vitesse Light Soft"
+author = "kvoon3"
+is_fordark = false
+
+[colors]
+foreground = "#393a34"
+background = "#f1f0e9"
+cursor_bg = "#393a34"
+cursor_fg = "#f1f0e9"
+selection_bg = "#d9d7cd"
+selection_fg = "#393a34"
+ansi = ["#f1f0e9", "#ab5959", "#1e754f", "#bda437", "#296aa3", "#a13865", "#2993a3", "#393a34"]
+brights = ["#aaaaaa", "#ab5959", "#1e754f", "#bda437", "#296aa3", "#a13865", "#2993a3", "#dddddd"]

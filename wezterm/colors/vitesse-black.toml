@@ -1,0 +1,14 @@
+[metadata]
+name = "Vitesse Black"
+author = "kvoon3"
+is_fordark = true
+
+[colors]
+foreground = "#dbd7ca"
+background = "#000000"
+cursor_bg = "#dbd7ca"
+cursor_fg = "#000000"
+selection_bg = "#222222"
+selection_fg = "#dbd7ca"
+ansi = ["#000000", "#cb7676", "#4d9375", "#e6cc77", "#6394bf", "#d9739f", "#5eaab5", "#dbd7ca"]
+brights = ["#777777", "#cb7676", "#4d9375", "#e6cc77", "#6394bf", "#d9739f", "#5eaab5", "#ffffff"]
