@@ -9,8 +9,8 @@ const HELP = `herdr-theme — switch the herdr color theme
 Usage:
   herdr-theme                 Interactive picker: configure the light/dark pair
   herdr-theme <name>          Switch directly to a theme (built-in or custom)
-  herdr-theme watch           Follow macOS appearance (used by herdrx; needs
-                              dark-notify: mise use -g ubi:cormacrelf/dark-notify)
+  herdr-theme watch           Follow system appearance (used by herdrx; macOS
+                              needs dark-notify: mise use -g ubi:cormacrelf/dark-notify)
   herdr-theme --list          List themes (marks the configured light/dark pair)
   herdr-theme --keep-custom   With a built-in theme: keep [theme.custom] overrides
   herdr-theme --help          Show this help

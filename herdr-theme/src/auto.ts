@@ -39,8 +39,10 @@ export function autoEnabled(settings: Settings): boolean {
   return settings.lightTheme !== null && settings.darkTheme !== null
 }
 
-/** Current macOS appearance. `AppleInterfaceStyle` only exists in dark mode. */
+/** Current system appearance. */
 export async function currentMode(): Promise<Mode> {
+  if (process.platform === "win32") return winMode()
+  // macOS: `AppleInterfaceStyle` only exists in dark mode.
   try {
     const proc = Bun.spawn(["defaults", "read", "-g", "AppleInterfaceStyle"], {
       stdout: "pipe",
@@ -49,6 +51,26 @@ export async function currentMode(): Promise<Mode> {
     const out = await new Response(proc.stdout).text()
     await proc.exited
     return out.trim().toLowerCase().startsWith("dark") ? "dark" : "light"
+  } catch {
+    return "light"
+  }
+}
+
+/** Windows: AppsUseLightTheme is 0 in dark mode, 1 in light mode. */
+async function winMode(): Promise<Mode> {
+  try {
+    const proc = Bun.spawn(
+      [
+        "powershell",
+        "-NoProfile",
+        "-Command",
+        "(Get-ItemProperty 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize').AppsUseLightTheme",
+      ],
+      { stdout: "pipe", stderr: "ignore" },
+    )
+    const out = await new Response(proc.stdout).text()
+    await proc.exited
+    return out.trim() === "0" ? "dark" : "light"
   } catch {
     return "light"
   }
