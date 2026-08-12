@@ -63,3 +63,5 @@ dotfiles/.agents/skills/c
 dotfiles/.agents/skills/cp
 !wezterm/
 !wezterm/**
+!notes/
+!notes/**
