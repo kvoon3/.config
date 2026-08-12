@@ -3,6 +3,11 @@ local config = wezterm.config_builder()
 
 config.default_prog = { 'C:/Program Files/Git/bin/bash.exe', '-l' }
 
+-- Full Nerd Font so TUI icons render with correct mono metrics;
+-- JetBrains Mono (default) lacks them -> broken fallback glyphs
+config.font = wezterm.font('MesloLGM Nerd Font Mono')
+config.font_size = 13.0
+
 local function scheme()
   return wezterm.gui.get_appearance():find('Dark') and 'Vitesse Black' or 'Vitesse Light Soft'
 end
