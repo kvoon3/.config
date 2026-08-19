@@ -1,0 +1,49 @@
+{
+  "defaultModel": "k3",
+  "defaultProvider": "kimi-coding",
+  "packages": [
+    "npm:pi-commandcode-provider",
+    "npm:pi-simplify",
+    "npm:pi-terminal-theme",
+    "npm:@mcowger/pi-better-messages-cache",
+    "npm:pi-diff-review",
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:@kvoon/pi-minimal-footer",
+    "npm:@kvoon/pi-macos-notify",
+    "git:github.com/earendil-works/pi-review",
+    "git:github.com/earendil-works/pi-review-loop",
+    "git:github.com/stnly/pi-grok@v0.6.0",
+    "git:github.com/algal/pi-openai-server-compaction",
+    "npm:@ogulcancelik/pi-herdr",
+    "npm:@ogulcancelik/pi-session-recall",
+    "npm:@ogulcancelik/pi-quit-and-delete",
+    "npm:pi-tool-display",
+    "npm:pi-language-tutor",
+    "npm:@kvoon/pi-split-fork",
+    "https://github.com/gsanhueza/pi-token-speed",
+    "npm:@ogulcancelik/pi-codex-subagents",
+    "npm:pi-mcp-adapter"
+  ],
+  "lastChangelogVersion": "0.84.2",
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "theme": "vitesse-light-soft/vitesse-black",
+  "doubleEscapeAction": "tree",
+  "treeFilterMode": "default",
+  "images": {
+    "blockImages": false
+  },
+  "vstack": {
+    "extensionManager": {
+      "disabledItems": [],
+      "config": {}
+    }
+  },
+  "quietStartup": false,
+  "steeringMode": "all",
+  "followUpMode": "one-at-a-time",
+  "tuiMode": "fullscreen",
+  "defaultThinkingLevel": "max",
+  "showCacheMissNotices": true
+}

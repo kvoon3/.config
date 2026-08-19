@@ -1,9 +1,28 @@
+[settings]
+dotfiles.root = "~/.config/dotfiles"
+experimental = true
+
+[dotfiles]
+"~/.zshrc" = {}
+"~/.zshenv" = {}
+"~/.bashrc" = {}
+"~/.bash_profile" = {}
+"~/.gitconfig" = {}
+"~/.agents" = {}
+"~/.codex" = { source = "~/.config/dotfiles/.codex", mode = "symlink-each" }
+"~/.pi/agent" = { source = "~/.config/dotfiles/.pi/agent", mode = "symlink-each" }
+"~/.kimi-code" = { source = "~/.config/dotfiles/.kimi-code", mode = "symlink-each" }
+
 [tools]
-bun = "1.3.13"
+bun = "1.3.14"
 gitu = "0"
 rust = "1"
 neovim = "0.12.4"
 "ubi:cormacrelf/dark-notify" = "latest"
-tree-sitter = "0.26.11"
+tree-sitter = "0.26.12"
 harper-ls = "2.7.0"
 "npm:hunkdiff" = "latest"
+node = "24"
+"npm:@openai/codex" = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:@moonshot-ai/kimi-code" = "latest"

@@ -25,6 +25,8 @@
 !mise/**
 !pi/
 !pi/**
+!dotfiles/
+!dotfiles/**
 
 # --- herdr-theme: exclude install / build artifacts ---
 herdr-theme/node_modules/
@@ -53,5 +55,11 @@ git/.git/
 git/config.local
 git/kvoon9
 git/gitk
+
+# --- dotfiles: exclude secrets / installer state / machine-local symlinks ---
+dotfiles/.secrets.zsh
+dotfiles/.agents/.skill-lock.json
+dotfiles/.agents/skills/c
+dotfiles/.agents/skills/cp
 !wezterm/
 !wezterm/**

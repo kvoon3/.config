@@ -1,0 +1,178 @@
+default_permission_mode = "yolo"
+default_model = "kimi-code/k3"
+
+[services.moonshot_search]
+base_url = "https://api.kimi.com/coding/v1/search"
+api_key = ""
+
+[services.moonshot_search.oauth]
+storage = "file"
+key = "oauth/kimi-code"
+
+[services.moonshot_fetch]
+base_url = "https://api.kimi.com/coding/v1/fetch"
+api_key = ""
+
+[services.moonshot_fetch.oauth]
+storage = "file"
+key = "oauth/kimi-code"
+
+[[hooks]]
+event = "SessionStart"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' session"
+timeout = 10
+
+[[hooks]]
+event = "UserPromptSubmit"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PreToolUse"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "SubagentStart"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PreCompact"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PermissionRequest"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' blocked"
+timeout = 10
+
+[[hooks]]
+event = "PermissionResult"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "Stop"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' idle"
+timeout = 10
+
+[[hooks]]
+event = "Interrupt"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' idle"
+timeout = 10
+
+[[hooks]]
+event = "SessionEnd"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' release"
+timeout = 10
+
+[[hooks]]
+event = "SessionStart"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' session"
+timeout = 10
+
+[[hooks]]
+event = "UserPromptSubmit"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PreToolUse"
+matcher = "^(?!AskUserQuestion$).*$"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PreToolUse"
+matcher = "^AskUserQuestion$"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' blocked"
+timeout = 10
+
+[[hooks]]
+event = "PostToolUse"
+matcher = "^AskUserQuestion$"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PostToolUseFailure"
+matcher = "^AskUserQuestion$"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "SubagentStart"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PreCompact"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "PermissionRequest"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' blocked"
+timeout = 10
+
+[[hooks]]
+event = "PermissionResult"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' working"
+timeout = 10
+
+[[hooks]]
+event = "Stop"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' idle"
+timeout = 10
+
+[[hooks]]
+event = "Interrupt"
+command = "bash '/Users/kvoon/.kimi-code/hooks/herdr-agent-state.sh' idle"
+timeout = 10
+
+[thinking]
+enabled = true
+effort = "high"
+
+[providers."managed:kimi-code"]
+type = "kimi"
+api_key = ""
+base_url = "https://api.kimi.com/coding/v1"
+
+[providers."managed:kimi-code".oauth]
+storage = "file"
+key = "oauth/kimi-code"
+
+[models."kimi-code/kimi-for-coding"]
+provider = "managed:kimi-code"
+model = "kimi-for-coding"
+max_context_size = 262144
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use" ]
+display_name = "K2.7 Coding"
+
+[models."kimi-code/kimi-for-coding-highspeed"]
+provider = "managed:kimi-code"
+model = "kimi-for-coding-highspeed"
+max_context_size = 262144
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use" ]
+display_name = "K2.7 Coding Highspeed"
+
+[models."kimi-code/k3"]
+provider = "managed:kimi-code"
+model = "k3"
+max_context_size = 1048576
+capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use" ]
+display_name = "K3"
+support_efforts = [ "low", "high", "max" ]
+default_effort = "high"
+
+[models."kimi-code/k3-256k"]
+provider = "managed:kimi-code"
+model = "k3-256k"
+max_context_size = 262144
+capabilities = [ "thinking", "always_thinking", "image_in", "tool_use" ]
+display_name = "K3-256k"
+support_efforts = [ "low", "high", "max" ]
+default_effort = "high"
+

@@ -1,0 +1,194 @@
+model = "gpt-5.6-sol"
+model_provider = "openai"
+model_reasoning_effort = "low"
+personality = "pragmatic"
+
+approvals_reviewer = "user"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+
+notify = ["/Users/kvoon/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[tui]
+theme = "gruvbox-light"
+status_line = ["model-with-reasoning", "current-dir", "five-hour-limit", "weekly-limit"]
+status_line_use_colors = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 4
+
+[notice]
+hide_full_access_warning = true
+
+[features]
+hooks = true
+terminal_resize_reflow = true
+goals = true
+prevent_idle_sleep = true
+js_repl = false
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-08-19T01:26:52Z"
+source_type = "local"
+source = "/Users/kvoon/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-08-14T09:10:57Z"
+source_type = "local"
+source = "/Users/kvoon/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[plugins."trade@plugins-cli"]
+enabled = true
+
+[plugins."build-macos-apps@openai-curated"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."google-drive@openai-curated"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[desktop]
+ambient-suggestions-enabled = true
+appearanceTheme = "system"
+appearanceLightCodeThemeId = "everforest"
+appearanceDarkCodeThemeId = "codex"
+sansFontSize = 14
+codeFontSize = 13
+composerEnterBehavior = "enter"
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+git-pull-request-merge-method = "squash"
+git-show-sidebar-pr-icons = true
+git-commit-instructions = """
+commit message should follow Conventional Commits:
+
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]"""
+selected-avatar-id = "stacky"
+conversationDetailMode = "STEPS_PROSE"
+git-create-pull-request-as-draft = false
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-system"
+avatar-overlay-mascot-width-px = 110
+
+[desktop.appearanceLightChromeTheme]
+accent = "#93b259"
+contrast = 45
+ink = "#5c6a72"
+opaqueWindows = false
+surface = "#fdf6e3"
+
+[desktop.appearanceLightChromeTheme.fonts]
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#8da101"
+diffRemoved = "#f85552"
+skill = "#df69ba"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#0169cc"
+contrast = 60
+ink = "#fcfcfc"
+opaqueWindows = true
+surface = "#111111"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+ui = "Inter"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#b06dff"
+
+[desktop.open-in-target-preferences]
+global = "vscode"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/kvoon/.codex/worktrees/b20f/oduck" = "ghostty"
+"/Users/kvoon/i/kvoon.me" = "vscode"
+"/Users/kvoon/weila/weila-js-sdk" = "fileManager"
+"/Users/kvoon/weila/weila-webview-realname-auth" = "vscode"
+"/Users/kvoon/weila/weila-work-and-sdk" = "vscode"
+"/Users/kvoon/i/oduck" = "ghostty"
+"/Users/kvoon/.codex/worktrees/744b/oduck" = "fileManager"
+"/Users/kvoon/.codex/worktrees/b637/oduck" = "ghostty"
+"/Users/kvoon/Documents/bookmarks" = "fileManager"
+"/Users/kvoon/i/bb" = "vscode"
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/kvoon/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+CODEX_HOME = "/Users/kvoon/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "7fe0e1c59da4bc68f9d6ab81ae8d349b53fee44b074f49be0effbc1105a5f1d3"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.810.41047"
+SKY_CUA_SERVICE_PATH = "/Users/kvoon/.codex/computer-use/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[hooks.state]
+
+[hooks.state."/Users/kvoon/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:d54bdde9870a3baf79050b5c9b5840093f2dfa2661a3c25e11185bb00fbad34b"
+enabled = true
+
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "7fe0e1c59da4bc68f9d6ab81ae8d349b53fee44b074f49be0effbc1105a5f1d3"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/kvoon/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+

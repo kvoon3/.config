@@ -1,0 +1,128 @@
+{
+  "providers": {
+    "tinyseek": {
+      "name": "TinySeek",
+      "baseUrl": "https://api.yjs.im/v1",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "agnes-2.0-flash"
+        },
+        {
+          "id": "agnes-2.5-flash"
+        },
+        {
+          "id": "agnes-2.5-pro"
+        },
+        {
+          "id": "agnes-2.5-pro-alpha"
+        },
+        {
+          "id": "big-pickle"
+        },
+        {
+          "id": "deepseek-v4-flash"
+        },
+        {
+          "id": "deepseek-v4-pro"
+        },
+        {
+          "id": "diffusiongemma-26b-a4b-it"
+        },
+        {
+          "id": "gemini-2.5-flash"
+        },
+        {
+          "id": "gemini-2.5-flash-lite"
+        },
+        {
+          "id": "gemini-3.1-flash-lite"
+        },
+        {
+          "id": "gemini-3.1-flash-lite-preview"
+        },
+        {
+          "id": "gemini-flash-lite-latest"
+        },
+        {
+          "id": "gemini-robotics-er-1.6-preview"
+        },
+        {
+          "id": "gemma-4-26b-a4b-it"
+        },
+        {
+          "id": "glm-4.5-flash"
+        },
+        {
+          "id": "glm-5.2"
+        },
+        {
+          "id": "gpt-oss-120b"
+        },
+        {
+          "id": "gpt-oss-20b"
+        },
+        {
+          "id": "kat-coder-pro-v2.5"
+        },
+        {
+          "id": "laguna-s-2.1"
+        },
+        {
+          "id": "ling-3.0-flash"
+        },
+        {
+          "id": "mimo-v2.5"
+        },
+        {
+          "id": "minimax-m2.1-highspeed"
+        },
+        {
+          "id": "minimax-m2.5"
+        },
+        {
+          "id": "minimax-m2.5-highspeed"
+        },
+        {
+          "id": "minimax-m2.7"
+        },
+        {
+          "id": "minimax-m2.7-highspeed"
+        },
+        {
+          "id": "minimax-m3"
+        },
+        {
+          "id": "nemotron-3-super-120b-a12b"
+        },
+        {
+          "id": "nemotron-3-ultra"
+        },
+        {
+          "id": "nemotron-3-ultra-550b-a55b"
+        },
+        {
+          "id": "north-mini-code"
+        },
+        {
+          "id": "openrouter"
+        },
+        {
+          "id": "qwen3.8-max-preview"
+        },
+        {
+          "id": "sensenova-6.7-flash-lite"
+        },
+        {
+          "id": "step-3.7-flash"
+        },
+        {
+          "id": "unreal-speech-v8"
+        },
+        {
+          "id": "z-image-turbo"
+        }
+      ]
+    }
+  }
+}

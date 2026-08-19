@@ -1,0 +1,5 @@
+# >>> otty bash-profile shim >>>
+# Otty: login bash reads the profile, not ~/.bashrc — pull it in so
+# the shell-integration block in ~/.bashrc is reached (e.g. in tmux).
+if [ -f "$HOME/.bashrc" ]; then . "$HOME/.bashrc"; fi
+# <<< otty bash-profile shim >>>
