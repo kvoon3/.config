@@ -20,6 +20,10 @@ if ! mise install; then
   echo "mise install failed; continuing so dark-notify can use the Homebrew fallback if needed."
 fi
 
+if ! mise dotfiles apply; then
+  echo "mise dotfiles apply failed; symlinked configs (settings.json, pi themes) may be missing."
+fi
+
 if ! command -v dark-notify >/dev/null 2>&1; then
   if command -v brew >/dev/null 2>&1; then
     brew install cormacrelf/tap/dark-notify
