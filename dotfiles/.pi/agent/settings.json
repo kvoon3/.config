@@ -1,17 +1,34 @@
 {
-  "defaultModel": "k3",
-  "defaultProvider": "kimi-coding",
+  "defaultModel": "stealth/ox-alpha",
+  "defaultProvider": "openrouter",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
     "npm:pi-terminal-theme",
     "npm:@mcowger/pi-better-messages-cache",
     "npm:pi-diff-review",
-    "git:github.com/DietrichGebert/ponytail",
+    {
+      "source": "git:github.com/DietrichGebert/ponytail",
+      "skills": [
+        "-skills/ponytail/SKILL.md",
+        "-skills/ponytail-audit/SKILL.md",
+        "-skills/ponytail-debt/SKILL.md",
+        "-skills/ponytail-gain/SKILL.md",
+        "-skills/ponytail-help/SKILL.md",
+        "-skills/ponytail-review/SKILL.md"
+      ],
+      "extensions": [
+        "-pi-extension/index.js"
+      ]
+    },
     "npm:@kvoon/pi-minimal-footer",
-    "npm:@kvoon/pi-macos-notify",
+    {
+      "source": "npm:@kvoon/pi-macos-notify",
+      "extensions": [
+        "+index.ts"
+      ]
+    },
     "git:github.com/earendil-works/pi-review",
-    "git:github.com/earendil-works/pi-review-loop",
     "git:github.com/stnly/pi-grok@v0.6.0",
     "git:github.com/algal/pi-openai-server-compaction",
     "npm:@ogulcancelik/pi-herdr",
@@ -20,9 +37,8 @@
     "npm:pi-tool-display",
     "npm:pi-language-tutor",
     "npm:@kvoon/pi-split-fork",
-    "https://github.com/gsanhueza/pi-token-speed",
     "npm:@ogulcancelik/pi-codex-subagents",
-    "npm:pi-mcp-adapter"
+    "git:github.com/kvoon3/pi-review-loop"
   ],
   "lastChangelogVersion": "0.84.2",
   "terminal": {
@@ -44,6 +60,6 @@
   "steeringMode": "all",
   "followUpMode": "one-at-a-time",
   "tuiMode": "fullscreen",
-  "defaultThinkingLevel": "max",
+  "defaultThinkingLevel": "high",
   "showCacheMissNotices": true
 }
