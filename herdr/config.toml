@@ -24,3 +24,6 @@ peach = "#bda437"
 
 [ui.toast]
 delivery = "system"
+
+[experimental]
+kitty_graphics = true

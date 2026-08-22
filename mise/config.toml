@@ -14,7 +14,7 @@ experimental = true
 "~/.kimi-code" = { source = "~/.config/dotfiles/.kimi-code", mode = "symlink-each" }
 
 [tools]
-bun = "1.3.14"
+bun = "1.4.0"
 gitu = "0"
 rust = "1"
 neovim = "0.12.4"
