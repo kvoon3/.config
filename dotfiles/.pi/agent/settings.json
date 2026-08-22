@@ -5,7 +5,6 @@
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
     "npm:pi-terminal-theme",
-    "npm:@mcowger/pi-better-messages-cache",
     "npm:pi-diff-review",
     {
       "source": "git:github.com/DietrichGebert/ponytail",

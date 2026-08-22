@@ -31,7 +31,6 @@ plugins=(
   zsh-syntax-highlighting
   zsh-z
   # zsh-vi-mode
-  kimi-cli
 )
 
 # Config file
@@ -50,7 +49,6 @@ alias ss='cat package.json | jq ".scripts"'
 # opencli completion
 fpath=(/Users/kvoon/.zsh/completions $fpath)
 source $ZSH/oh-my-zsh.sh
-source $HOME/.rye/env
 
 # -------------------------------- #
 # Node Package Manager
