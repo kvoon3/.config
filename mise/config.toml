@@ -15,14 +15,38 @@ experimental = true
 
 [tools]
 bun = "1.4.0"
-gitu = "0"
 rust = "1"
+uv = "latest"
+
+# ── Package managers ──
+pnpm = "latest"
+"npm:@antfu/ni" = "latest"
+
+# ── Editors & terminal ──
 neovim = "0.12.4"
 "ubi:cormacrelf/dark-notify" = "latest"
 tree-sitter = "0.26.12"
-harper-ls = "2.7.0"
-"npm:hunkdiff" = "latest"
-node = "24"
-"npm:@openai/codex" = "latest"
+harper-ls = "2.8.0"
+"npm:unocss-language-server" = "latest"
+
+# ── Git / CLI utilities ──
+gitu = "0"
+just = "latest"
+lazygit = "latest"
+herdr = "latest"
+ripgrep = "latest"
+
+# ── AI agents ──
 "npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:@openai/codex" = "latest"
 "npm:@moonshot-ai/kimi-code" = "latest"
+"npm:@kvoon/bb-cli" = "latest"
+opencode = "latest"       # aqua:anomalyco/opencode native binary
+"npm:agent-browser" = "latest"
+"npm:command-code" = "latest"
+
+# ── Node dev helpers ──
+node = "24"
+"npm:hunkdiff" = "latest"
+"npm:tsx" = "latest"
+"ubi:sharkdp/fd" = "latest"
