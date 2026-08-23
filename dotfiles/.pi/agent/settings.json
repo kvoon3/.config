@@ -21,12 +21,7 @@
       ]
     },
     "npm:@kvoon/pi-minimal-footer",
-    {
-      "source": "npm:@kvoon/pi-macos-notify",
-      "extensions": [
-        "+index.ts"
-      ]
-    },
+    "npm:@kvoon/pi-macos-notify",
     "git:github.com/earendil-works/pi-review",
     "git:github.com/stnly/pi-grok@v0.6.0",
     "git:github.com/algal/pi-openai-server-compaction",
@@ -39,6 +34,7 @@
     "npm:@ogulcancelik/pi-codex-subagents",
     "git:github.com/kvoon3/pi-review-loop"
   ],
+  "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
   "lastChangelogVersion": "0.84.2",
   "terminal": {
     "showTerminalProgress": true

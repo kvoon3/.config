@@ -112,9 +112,7 @@ alias gll='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %
 alias ggp='git grep'
 alias ggpa='git grep -npW'
 
-function glc() {
-  git log -n "$1" --pretty=format:"%h %s" | pbcopy
-}
+source "$HOME/.config/dotfiles/functions.sh"
 
 alias grh='git reset HEAD'
 alias grh1='git reset HEAD~1'
@@ -137,27 +135,6 @@ alias gsha='git rev-parse HEAD | pbcopy'
 
 alias ghci='gh run list -L 1'
 
-
-function glp() {
-  git --no-pager log -$1
-}
-
-function gd() {
-  if [[ -z $1 ]] then
-    git diff --color | diff-so-fancy
-  else
-    git diff --color $1 | diff-so-fancy
-  fi
-}
-
-function gdc() {
-  if [[ -z $1 ]] then
-    git diff --color --cached | diff-so-fancy
-  else
-    git diff --color --cached $1 | diff-so-fancy
-  fi
-}
-
 # -------------------------------- #
 # Directories
 #
@@ -166,50 +143,6 @@ function gdc() {
 # `~/f` for forks
 # `~/r` for reproductions
 # -------------------------------- #
-
-function i() {
-  cd ~/i/$1
-}
-
-function repros() {
-  cd ~/r/$1
-}
-
-function forks() {
-  cd ~/f/$1
-}
-
-function notes () {
-  cd ~/i/notes/$1
-}
-
-function weila() {
-  cd ~/weila/$1
-}
-
-function repo() {
-  cd ~/repo/$1
-} 
-
-function pr() {
-  if [ $1 = "ls" ]; then
-    gh pr list
-  else
-    gh pr checkout $1
-  fi
-}
-
-function dir() {
-  mkdir $1 && cd $1
-}
-
-function clone() {
-  if [[ -z $2 ]] then
-    gh repo clone "$@" && cd "$(basename "$1" .git)"
-  else
-    gh repo clone "$@" && cd "$2"
-  fi
-}
 
 # Clone to ~/i and cd to it
 function clonei() {
@@ -226,61 +159,6 @@ function clonef() {
 
 function cloneme() {
   i && clone "https://github.com/kvoon3/$@" && code . && cd ~2
-}
-
-function codei() {
-  i && code "$@" && cd -
-}
-
-function gcop() {
-  local src="$1"
-  local dest="$2"
-
-  if [ -z "$src" ] || [ -z "$dest" ]; then
-    echo "Usage: git-copy <source-repo-path> <target-dir>"
-    return 1
-  fi
-
-  if [ -d "$dest" ]; then
-    echo "Error: target directory already exists: $dest"
-    return 1
-  fi
-
-  echo "Creating clean snapshot from: $src"
-  echo "Target: $dest"
-
-  mkdir -p "$dest"
-
-  (
-    cd "$src" || exit 1
-    git archive HEAD | tar -x -C "../$dest"
-  )
-
-  cd "$dest" || return 1
-
-  tree .
-
-  git init
-  git add .
-  git commit -m "init"
-
-  echo "Done: $dest initialized from $src"
-}
-
-# -------------------------------- #
-# Server / Port Utilities
-# -------------------------------- #
-
-function serve() {
-  if [[ -z $1 ]] then
-    live-server dist
-  else
-    live-server $1
-  fi
-}
-
-function kp() {
-  kill -9 $(lsof -t -i:$1)
 }
 
 # Generated for envman. Do not edit.
