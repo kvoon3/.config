@@ -75,8 +75,8 @@ alias re="nr release"
 # vite-plus
 alias vr="vp run"
 
-# Use github/hub
-alias git=hub
+# hub retired: use gh instead (hub can't read gh's keyring token and GitHub no longer allows password auth)
+# alias git=hub
 
 alias gi='git init'
 
@@ -88,7 +88,7 @@ alias gp='git push'
 alias gpf='git push --force'
 alias gpft='git push --follow-tags'
 alias gpl='git pull --rebase'
-alias gcl='git clone'
+alias gcl='gh repo clone'
 alias gst='git stash'
 alias grm='git rm'
 alias gmv='git mv'
@@ -205,9 +205,9 @@ function dir() {
 
 function clone() {
   if [[ -z $2 ]] then
-    hub clone "$@" && cd "$(basename "$1" .git)"
+    gh repo clone "$@" && cd "$(basename "$1" .git)"
   else
-    hub clone "$@" && cd "$2"
+    gh repo clone "$@" && cd "$2"
   fi
 }
 
