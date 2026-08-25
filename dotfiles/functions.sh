@@ -10,6 +10,19 @@ glc() {
   git log -n "$1" --pretty=format:"%h %s" | pbcopy
 }
 
+yz() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+glp() {
+  git --no-pager log -"$1"
+}
+
 gd() {
   if [ -z "$1" ]; then
     git diff --color | diff-so-fancy
@@ -77,6 +90,18 @@ clone() {
   else
     gh repo clone "$@" && cd "$2"
   fi
+}
+
+clonei() {
+  i && clone "$@" && code . && cd ~2 2>/dev/null || cd -
+}
+
+cloner() {
+  repros && clone "$@" && code . && cd ~2 2>/dev/null || cd -
+}
+
+clonef() {
+  forks && clone "$@" && code . && cd ~2 2>/dev/null || cd -
 }
 
 codei() {
