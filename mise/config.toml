@@ -5,7 +5,8 @@ experimental = true
 [dotfiles]
 "~/.zshrc" = {}
 "~/.zshenv" = {}
-"~/.bashrc" = {}
+# Windows Git Bash (C:/Program Files/Git/bin/bash.exe, non_login) — separate from macOS zshrc
+"~/.bashrc" = { source = "~/.config/windows/.bashrc" }
 "~/.bash_profile" = {}
 "~/.gitconfig" = {}
 "~/.agents" = {}
@@ -24,7 +25,7 @@ pnpm = "latest"
 
 # ── Editors & terminal ──
 neovim = "0.12.4"
-"ubi:cormacrelf/dark-notify" = "latest"
+"github:cormacrelf/dark-notify" = { version = "latest", os = "macos" }
 tree-sitter = "0.26.12"
 harper-ls = "2.8.0"
 "npm:unocss-language-server" = "latest"
@@ -47,8 +48,8 @@ opencode = "latest"       # aqua:anomalyco/opencode native binary
 
 # ── Node dev helpers ──
 node = "24"
-"npm:hunkdiff" = "latest"
+"npm:hunkdiff" = { version = "latest", trust_policy_excludes = ["@pierre/theme@2.0.0"] }
 "npm:tsx" = "latest"
-"ubi:sharkdp/fd" = "latest"
+"aqua:sharkdp/fd" = "latest"
 gh = "latest"
 "npm:@kvoon/gop" = "0.1.0"
