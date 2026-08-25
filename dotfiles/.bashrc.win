@@ -1,0 +1,32 @@
+if [ -z "$BASH_PROFILE_SOURCED" ] && [ -f ~/.bash_profile ]; then
+  export BASH_PROFILE_SOURCED=1
+  source ~/.bash_profile
+fi
+
+source ~/.git-completion.bash 2>/dev/null
+source ~/.git-prompt.sh 2>/dev/null
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+source "$HOME/.config/dotfiles/proxy.sh"
+source "$HOME/.config/dotfiles/mirrors.sh"
+
+alias bashconfig='nvim ~/.config/dotfiles/.bashrc.win'
+alias vscodevimrc='code C://Users/admin/i/vscode-vimrc/.vimrc'
+alias obconfig='code C://Users/admin/iCloudDrive/iCloud~md~obsidian/KevinNotes/.obsidian.vimrc'
+alias alconfig='code C://Users/admin/AppData/Roaming/alacritty/alacritty.toml'
+alias nvimconfig='nvim ~/appdata/local/nvim'
+alias im-select='C://im-select/im-select-imm'
+alias scripts="cat package.json | jq '.scripts'"
+alias ss="scripts"
+
+source "$HOME/.config/dotfiles/aliases.sh"
+
+eval "$(starship init bash)"
+eval "$(fzf --bash)"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
+[ -f "$HOME/.config/windows/.secrets.bash" ] && source "$HOME/.config/windows/.secrets.bash"
+[ -f "$HOME/.config/dotfiles/.secrets.bash" ] && source "$HOME/.config/dotfiles/.secrets.bash"
+[ -f "$HOME/.config/dotfiles/functions.sh" ] && source "$HOME/.config/dotfiles/functions.sh"

@@ -29,6 +29,10 @@
 !dotfiles/**
 !windows/
 !windows/**
+!wezterm/
+!wezterm/**
+!notes/
+!notes/**
 
 # --- herdr-theme: exclude install / build artifacts ---
 herdr-theme/node_modules/
@@ -59,12 +63,10 @@ git/kvoon9
 git/gitk
 
 # --- dotfiles: exclude secrets / installer state / machine-local symlinks ---
+# windows/.bashrc now lives at dotfiles/.bashrc.win (shared via dotfiles), windows/ kept only for .secrets.bash
 windows/.secrets.bash
 dotfiles/.secrets.zsh
+dotfiles/.secrets.bash
 dotfiles/.agents/.skill-lock.json
 dotfiles/.agents/skills/c
 dotfiles/.agents/skills/cp
-!wezterm/
-!wezterm/**
-!notes/
-!notes/**

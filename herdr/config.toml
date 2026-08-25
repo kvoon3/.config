@@ -29,5 +29,6 @@ delivery = "system"
 kitty_graphics = true
 
 [terminal]
-default_shell = "C:/Program Files/Git/bin/bash.exe"
-shell_mode = "non_login"
+# TODO: should only used in windows
+# default_shell = "C:/Program Files/Git/bin/bash.exe"
+# shell_mode = "non_login"

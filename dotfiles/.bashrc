@@ -1,7 +1,7 @@
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-. "/Users/kvoon/.deno/env"
-. "$HOME/.cargo/env"
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-eval "$(/Users/kvoon/.local/bin/mise activate bash)"
+# ~/.bashrc — dispatcher (mise links here on all OS)
+if [[ "$OSTYPE" == msys* || "$OSTYPE" == cygwin* || "$OSTYPE" == win32* ]] || [[ "$(uname -s 2>/dev/null)" == MINGW* ]]; then
+  [ -f "$HOME/.config/dotfiles/.bashrc.win" ] && source "$HOME/.config/dotfiles/.bashrc.win"
+else
+  export PATH="$HOME/.local/share/mise/shims:$PATH"
+  command -v mise >/dev/null && eval "$(mise activate bash)"
+fi
