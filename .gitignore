@@ -68,6 +68,4 @@ windows/.secrets.bash
 dotfiles/.secrets.zsh
 dotfiles/.secrets.bash
 dotfiles/.agents/.skill-lock.json
-dotfiles/.agents/skills/c
-dotfiles/.agents/skills/cp
 dotfiles/.agents/skills/terminal-browser
