@@ -1,4 +1,10 @@
 onboarding = false
+
+# NOTE: the [theme] and [theme.custom] sections below are managed by
+# herdr-theme (./herdr-theme, src/config.ts writeTheme + src/auto.ts), which
+# rewrites them on theme switches. Do NOT commit changes to these sections —
+# they are generated/automation output, not hand-edits. Only commit changes to
+# the other sections ([ui.toast], [experimental], [terminal], etc.).
 [theme]
 name = "tokyo-night"
 
