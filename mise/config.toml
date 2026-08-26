@@ -6,7 +6,7 @@ experimental = true
 "~/.zshrc" = {}
 "~/.zshenv" = {}
 # Windows Git Bash (C:/Program Files/Git/bin/bash.exe, non_login) — separate from macOS zshrc
-"~/.bashrc" = { source = "~/.config/windows/.bashrc" }
+"~/.bashrc" = { source = "~/.config/dotfiles/.bashrc.win" }
 "~/.bash_profile" = {}
 "~/.gitconfig" = {}
 "~/.agents" = {}
