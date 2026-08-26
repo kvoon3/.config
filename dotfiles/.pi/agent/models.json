@@ -123,6 +123,44 @@
           "id": "z-image-turbo"
         }
       ]
+    },
+    "gmi": {
+      "name": "GMI Cloud",
+      "baseUrl": "https://api.gmi-serving.com/v1",
+      "api": "openai-completions",
+      "apiKey": "$GMI_API_KEY",
+      "models": [
+        {
+          "id": "MiniMaxAI/MiniMax-M3",
+          "name": "MiniMaxAI/MiniMax-M3",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576
+        },
+        {
+          "id": "MiniMaxAI/MiniMax-M2.7",
+          "name": "MiniMaxAI/MiniMax-M2.7",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 196608
+        }
+      ]
     }
   }
 }

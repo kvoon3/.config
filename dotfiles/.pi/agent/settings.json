@@ -1,6 +1,6 @@
 {
-  "defaultModel": "stealth/ox-alpha",
-  "defaultProvider": "openrouter",
+  "defaultModel": "MiniMaxAI/MiniMax-M3",
+  "defaultProvider": "gmi",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
@@ -36,7 +36,7 @@
     "npm:@kvoon/pi-windows-system-theme"
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
-  "lastChangelogVersion": "0.84.2",
+  "lastChangelogVersion": "0.84.3",
   "terminal": {
     "showTerminalProgress": true
   },
