@@ -2,6 +2,13 @@
 dotfiles.root = "~/.config/dotfiles"
 experimental = true
 
+# GitHub auth: `gh` stores tokens in macOS Keychain, not hosts.yml, so the
+# default gh_cli_tokens fallback finds nothing and mise hits the 60 req/h
+# unauthenticated rate limit. git credential fill reads Keychain directly.
+# https://mise.jdx.dev/dev-tools/github-tokens.html
+[settings.github]
+use_git_credentials = true
+
 [dotfiles]
 "~/.zshrc" = {}
 "~/.zshenv" = {}
