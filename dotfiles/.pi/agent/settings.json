@@ -32,10 +32,8 @@
     "npm:pi-language-tutor",
     "npm:@kvoon/pi-split-fork",
     "npm:@ogulcancelik/pi-codex-subagents",
-    "git:github.com/kvoon3/pi-review-loop"
-  ],
-  "extensions": [
-    "C:/Users/admin/i/pi-extensions/pi-windows-system-theme"
+    "git:github.com/kvoon3/pi-review-loop",
+    "npm:@kvoon/pi-windows-system-theme"
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
   "lastChangelogVersion": "0.84.2",
