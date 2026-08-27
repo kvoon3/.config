@@ -49,6 +49,7 @@ herdr/session-history.json
 herdr/release-notes.json
 herdr/plugins.json
 herdr/.plugins.lock
+herdr/plugins/
 
 # --- kitty: exclude backup files ---
 kitty/*.bak

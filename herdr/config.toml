@@ -38,3 +38,9 @@ kitty_graphics = true
 # TODO: should only used in windows
 # default_shell = "C:/Program Files/Git/bin/bash.exe"
 # shell_mode = "non_login"
+
+[[keys.command]]
+key = "ctrl+space"
+type = "shell"
+command = "\"$HERDR_BIN_PATH\" plugin pane open --plugin cesarferreira.herdr-palette --entrypoint picker"
+description = "Open Herdr Palette"
