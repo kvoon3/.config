@@ -1,6 +1,11 @@
 [settings]
 dotfiles.root = "~/.config/dotfiles"
 experimental = true
+# Disable the 24h release-age filter. mise 2026.6.14 defaults to
+# minimum_release_age="24h", which skips versions published <24h ago and
+# prints a WARN per tool on every `mise up`. "0s" disables it entirely.
+# https://mise.jdx.dev/configuration/settings.html#minimum_release_age
+minimum_release_age = "0s"
 
 # GitHub auth: `gh` stores tokens in macOS Keychain, not hosts.yml, so the
 # default gh_cli_tokens fallback finds nothing and mise hits the 60 req/h
@@ -8,6 +13,14 @@ experimental = true
 # https://mise.jdx.dev/dev-tools/github-tokens.html
 [settings.github]
 use_git_credentials = true
+# Disable GitHub Artifact Attestations (Sigstore) verification for the
+# github: backend. mise 2026.6.14's bundled Sigstore verifier fails TSA
+# timestamp verification for every repo with "no certificate matches
+# issuer and serial number" — a mise/Sigstore infra issue, not per-tool.
+# SLSA provenance is still verified when the release ships it. Without
+# this, `github:` tools (herdr, dark-notify, ...) cannot install at all.
+# https://mise.jdx.dev/configuration/settings.html#github-github_attestations
+github_attestations = false
 
 [dotfiles]
 "~/.zshrc" = {}
@@ -41,7 +54,11 @@ harper-ls = "2.8.0"
 gitu = "0"
 just = "latest"
 lazygit = "latest"
-herdr = "latest"
+# Explicit repo: the `herdr` shortname in mise's registry aliases to
+# github:ogulcancelik/herdr (a fork not in the mise registry → 403 on
+# every version lookup). Point at the official github:herdrdev/herdr
+# directly to skip the broken alias and the 403 WARN noise.
+"github:herdrdev/herdr" = "latest"
 ripgrep = "latest"
 
 # ── AI agents ──

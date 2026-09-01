@@ -6,27 +6,27 @@ onboarding = false
 # they are generated/automation output, not hand-edits. Only commit changes to
 # the other sections ([ui.toast], [experimental], [terminal], etc.).
 [theme]
-name = "tokyo-night"
+name = "catppuccin-latte"
 
 auto_switch = false
 
 [theme.custom]
-accent = "#4d9375"
-panel_bg = "#000000"
-surface0 = "#121212"
-surface1 = "#121212"
-surface_dim = "#0f1d17"
-overlay0 = "#777777"
-overlay1 = "#bfbaaa"
-text = "#dbd7ca"
-subtext0 = "#bfbaaa"
-mauve = "#d9739f"
-green = "#4d9375"
-yellow = "#e6cc77"
-red = "#cb7676"
-blue = "#6394bf"
-teal = "#5eaab5"
-peach = "#e6cc77"
+accent = "#1c6b48"
+panel_bg = "#f1f0e9"
+surface0 = "#e7e5db"
+surface1 = "#e5e5e3"
+surface_dim = "#e7e5db"
+overlay0 = "#aaaaaa"
+overlay1 = "#999999"
+text = "#393a34"
+subtext0 = "#999999"
+mauve = "#a13865"
+green = "#1e754f"
+yellow = "#bda437"
+red = "#ab5959"
+blue = "#296aa3"
+teal = "#2993a3"
+peach = "#bda437"
 
 [ui.toast]
 delivery = "system"

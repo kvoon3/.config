@@ -6,20 +6,7 @@
     "npm:pi-simplify",
     "npm:pi-terminal-theme",
     "npm:pi-diff-review",
-    {
-      "source": "git:github.com/DietrichGebert/ponytail",
-      "skills": [
-        "-skills/ponytail/SKILL.md",
-        "-skills/ponytail-audit/SKILL.md",
-        "-skills/ponytail-debt/SKILL.md",
-        "-skills/ponytail-gain/SKILL.md",
-        "-skills/ponytail-help/SKILL.md",
-        "-skills/ponytail-review/SKILL.md"
-      ],
-      "extensions": [
-        "-pi-extension/index.js"
-      ]
-    },
+    "git:github.com/DietrichGebert/ponytail",
     "npm:@kvoon/pi-minimal-footer",
     "npm:@kvoon/pi-macos-notify",
     "git:github.com/earendil-works/pi-review",
@@ -33,7 +20,7 @@
     "npm:@kvoon/pi-split-fork",
     "npm:@ogulcancelik/pi-codex-subagents",
     "git:github.com/kvoon3/pi-review-loop",
-    "npm:@kvoon/pi-windows-system-theme"
+    "npm:@ff-labs/pi-fff"
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
   "lastChangelogVersion": "0.84.3",
