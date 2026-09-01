@@ -1,0 +1,48 @@
+[
+  {
+    "plugin_id": "cesarferreira.herdr-palette",
+    "name": "Herdr Palette",
+    "version": "0.3.5",
+    "min_herdr_version": "0.7.0",
+    "description": "Fuzzy command palette that teaches effective Herdr shortcuts",
+    "manifest_path": "/Users/kvoon/.config/herdr/plugins/github/cesarferreira.herdr-palette-57e12190d726/herdr-plugin.toml",
+    "plugin_root": "/Users/kvoon/.config/herdr/plugins/github/cesarferreira.herdr-palette-57e12190d726",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "bun",
+          "install",
+          "--production"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "picker",
+        "title": "Herdr Palette",
+        "placement": "popup",
+        "width": "80%",
+        "height": 20,
+        "command": [
+          "bun",
+          "run",
+          "src/main.ts"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "kvoon3",
+      "repo": "herdr-palette",
+      "requested_ref": "feat/config-theme",
+      "resolved_commit": "a66b130dafca200f19526c4128d80463d9e4ca93",
+      "managed_path": "/Users/kvoon/.config/herdr/plugins/github/cesarferreira.herdr-palette-57e12190d726",
+      "installed_unix_ms": 1788242412902
+    }
+  }
+]
