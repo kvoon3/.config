@@ -2,5 +2,9 @@
   {
     "command": "hotkeyWindow",
     "key": null
+  },
+  {
+    "command": "openAvatarOverlay",
+    "key": null
   }
 ]

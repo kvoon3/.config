@@ -665,6 +665,19 @@
                             "to": [{ "key_code": "grave_accent_and_tilde" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 12984,
+                        "vendor_id": 10007
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "return_or_enter" },
+                            "to": [{ "key_code": "e" }]
+                        }
+                    ]
                 }
             ],
             "name": "Default profile",

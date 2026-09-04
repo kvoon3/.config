@@ -1,6 +1,6 @@
 {
-  "defaultModel": "MiniMaxAI/MiniMax-M3",
-  "defaultProvider": "gmi",
+  "defaultModel": "kimi-for-coding",
+  "defaultProvider": "kimi-coding",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
