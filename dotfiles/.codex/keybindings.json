@@ -6,5 +6,13 @@
   {
     "command": "openAvatarOverlay",
     "key": null
+  },
+  {
+    "command": "switchToMode1",
+    "key": "Ctrl+Shift+1"
+  },
+  {
+    "command": "switchToMode2",
+    "key": "Ctrl+Shift+@"
   }
 ]
