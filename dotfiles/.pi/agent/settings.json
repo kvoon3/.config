@@ -10,7 +10,6 @@
     "npm:@kvoon/pi-minimal-footer",
     "npm:@kvoon/pi-macos-notify",
     "git:github.com/earendil-works/pi-review",
-    "git:github.com/stnly/pi-grok@v0.6.0",
     "git:github.com/algal/pi-openai-server-compaction",
     "npm:@ogulcancelik/pi-herdr",
     "npm:@ogulcancelik/pi-session-recall",
@@ -23,7 +22,7 @@
     "npm:@ff-labs/pi-fff"
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
-  "lastChangelogVersion": "0.84.3",
+  "lastChangelogVersion": "0.85.0",
   "terminal": {
     "showTerminalProgress": true
   },
