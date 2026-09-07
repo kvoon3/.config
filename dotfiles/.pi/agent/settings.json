@@ -1,28 +1,41 @@
 {
-  "defaultModel": "kimi-for-coding",
-  "defaultProvider": "kimi-coding",
+  "defaultModel": "glm-5.3-flash",
+  "defaultProvider": "zai-coding-cn",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
     "npm:pi-terminal-theme",
     "npm:pi-diff-review",
     "git:github.com/DietrichGebert/ponytail",
-    "npm:@kvoon/pi-minimal-footer",
-    "npm:@kvoon/pi-macos-notify",
     "git:github.com/earendil-works/pi-review",
     "git:github.com/algal/pi-openai-server-compaction",
-    "npm:@ogulcancelik/pi-herdr",
-    "npm:@ogulcancelik/pi-session-recall",
-    "npm:@ogulcancelik/pi-quit-and-delete",
     "npm:pi-tool-display",
     "npm:pi-language-tutor",
-    "npm:@kvoon/pi-split-fork",
-    "npm:@ogulcancelik/pi-codex-subagents",
     "git:github.com/kvoon3/pi-review-loop",
-    "npm:@ff-labs/pi-fff"
+    "npm:@ff-labs/pi-fff",
+    {
+      "source": "git:github.com/kvoon3/pi-extensions",
+      "extensions": [
+        "pi-macos-notify/index.ts",
+        "pi-minimal-footer/index.ts",
+        "pi-split-fork/index.ts"
+      ],
+      "skills": []
+    },
+    {
+      "source": "git:github.com/ogulcancelik/pi-extensions",
+      "extensions": [
+        "packages/pi-herdr/index.ts",
+        "packages/pi-session-recall/session-recall.ts",
+        "packages/pi-quit-and-delete/index.ts",
+        "packages/pi-codex-subagents/index.ts",
+        "packages/pi-herdr-worktree-jump/index.ts"
+      ],
+      "skills": []
+    }
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
-  "lastChangelogVersion": "0.85.0",
+  "lastChangelogVersion": "0.85.1",
   "terminal": {
     "showTerminalProgress": true
   },
