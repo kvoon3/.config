@@ -20,19 +20,10 @@ For an already-cloned checkout, the core setup is:
 
 ```sh
 mise install
-mise exec -- ~/.config/herdr-theme/scripts/install.sh
 ```
 
-Use `herdrx` instead of `herdr` — it follows macOS appearance, applying the
-light/dark theme pair from `herdr-theme/config.json` (edit via `herdr-theme`).
-
-This setup uses mise for managed tools. `mise install` may fail to install
-`dark-notify` if GitHub API rate limits unauthenticated requests; Homebrew is
-only used as a fallback for that case:
-
-```sh
-brew install cormacrelf/tap/dark-notify
-```
+herdr follows macOS appearance natively (`auto_switch` with per-mode
+`[theme.custom.light]`/`[theme.custom.dark]` in `herdr/config.toml`).
 
 Kitty uses Input Mono. Install it with Homebrew:
 

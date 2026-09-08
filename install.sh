@@ -17,25 +17,9 @@ fi
 
 cd "$HOME/.config"
 if ! mise install; then
-  echo "mise install failed; continuing so dark-notify can use the Homebrew fallback if needed."
+  echo "mise install failed; some managed tools may be missing."
 fi
 
 if ! mise dotfiles apply; then
   echo "mise dotfiles apply failed; symlinked configs (settings.json, pi themes) may be missing."
 fi
-
-if ! command -v dark-notify >/dev/null 2>&1; then
-  if command -v brew >/dev/null 2>&1; then
-    brew install cormacrelf/tap/dark-notify
-  else
-    echo "dark-notify is missing; install it after GitHub rate limits clear, or install Homebrew and run:"
-    echo "  brew install cormacrelf/tap/dark-notify"
-  fi
-fi
-
-mise exec -- "$HOME/.config/herdr-theme/scripts/install.sh"
-
-command -v herdrx
-command -v herdr-theme
-command -v dark-notify
-herdr-theme --list

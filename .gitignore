@@ -19,8 +19,6 @@
 !ghostty/**
 !git/
 !git/**
-!herdr-theme/
-!herdr-theme/**
 !mise/
 !mise/**
 !pi/
@@ -33,13 +31,6 @@
 !wezterm/**
 !notes/
 !notes/**
-
-# --- herdr-theme: exclude install / build artifacts ---
-herdr-theme/node_modules/
-herdr-theme/dist/
-herdr-theme/backups/
-herdr-theme/watch.log
-herdr-theme/watch.err.log
 
 # --- herdr: exclude runtime / generated / machine-local files ---
 herdr/*.log

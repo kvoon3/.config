@@ -1,16 +1,15 @@
 onboarding = false
 
-# NOTE: the [theme] and [theme.custom] sections below are managed by
-# herdr-theme (./herdr-theme, src/config.ts writeTheme + src/auto.ts), which
-# rewrites them on theme switches. Do NOT commit changes to these sections —
-# they are generated/automation output, not hand-edits. Only commit changes to
-# the other sections ([ui.toast], [experimental], [terminal], etc.).
+# Native light/dark pair (herdr 0.9.0 auto_switch), replacing the removed
+# herdr-theme sidecar: vitesse-light-soft = catppuccin-latte + light overrides,
+# vitesse-black = tokyo-night + dark overrides.
 [theme]
 name = "catppuccin-latte"
+auto_switch = true
+light_name = "catppuccin-latte"
+dark_name = "tokyo-night"
 
-auto_switch = false
-
-[theme.custom]
+[theme.custom.light]
 accent = "#1c6b48"
 panel_bg = "#f1f0e9"
 surface0 = "#e7e5db"
@@ -27,6 +26,24 @@ red = "#ab5959"
 blue = "#296aa3"
 teal = "#2993a3"
 peach = "#bda437"
+
+[theme.custom.dark]
+accent = "#4d9375"
+panel_bg = "#000000"
+surface0 = "#121212"
+surface1 = "#121212"
+surface_dim = "#0f1d17"
+overlay0 = "#777777"
+overlay1 = "#bfbaaa"
+text = "#dbd7ca"
+subtext0 = "#bfbaaa"
+mauve = "#d9739f"
+green = "#4d9375"
+yellow = "#e6cc77"
+red = "#cb7676"
+blue = "#6394bf"
+teal = "#5eaab5"
+peach = "#e6cc77"
 
 [ui.toast]
 delivery = "system"

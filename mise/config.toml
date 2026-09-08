@@ -45,7 +45,6 @@ pnpm = "latest"
 
 # ── Editors & terminal ──
 neovim = "0.12.4"
-"github:cormacrelf/dark-notify" = { version = "latest", os = "macos" }
 tree-sitter = "0.26.12"
 harper-ls = "2.8.0"
 "npm:unocss-language-server" = "latest"
