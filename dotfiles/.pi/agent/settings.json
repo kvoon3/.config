@@ -1,6 +1,6 @@
 {
-  "defaultModel": "glm-5.3-flash",
-  "defaultProvider": "zai-coding-cn",
+  "defaultModel": "deepseek-v4.1-flash",
+  "defaultProvider": "workbuddy",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
@@ -18,7 +18,8 @@
       "extensions": [
         "pi-minimal-footer/index.ts",
         "pi-split-fork/index.ts",
-        "pi-kitty-notify/index.ts"
+        "pi-kitty-notify/index.ts",
+        "pi-workbuddy/index.ts"
       ],
       "skills": []
     },
