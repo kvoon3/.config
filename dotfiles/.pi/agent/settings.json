@@ -30,7 +30,8 @@
         "packages/pi-session-recall/session-recall.ts",
         "packages/pi-quit-and-delete/index.ts",
         "packages/pi-codex-subagents/index.ts",
-        "packages/pi-herdr-worktree-jump/index.ts"
+        "packages/pi-herdr-worktree-jump/index.ts",
+        "packages/pi-model-thinking/index.ts"
       ],
       "skills": []
     }
@@ -57,5 +58,6 @@
   "followUpMode": "one-at-a-time",
   "tuiMode": "fullscreen",
   "defaultThinkingLevel": "high",
-  "showCacheMissNotices": true
+  "showCacheMissNotices": true,
+  "hideThinkingBlock": false
 }

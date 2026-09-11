@@ -1,0 +1,11 @@
+{
+  "models": {
+    "workbuddy/deepseek-v4.1-flash": "max"
+  },
+  "providers": {
+    "workbuddy": "high",
+    "anthropic": "high",
+    "kimi-coding": "high",
+    "openai-codex": "high"
+  }
+}
