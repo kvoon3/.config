@@ -1,5 +1,9 @@
 [
   {
+    "command": "globalDictationHold",
+    "key": "Ctrl+Command+X"
+  },
+  {
     "command": "hotkeyWindow",
     "key": null
   },
