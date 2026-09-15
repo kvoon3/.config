@@ -1,6 +1,7 @@
 {
   "models": {
-    "workbuddy/deepseek-v4.1-flash": "max"
+    "workbuddy/deepseek-v4.1-flash": "max",
+    "workbuddy/cn:glm-5.3": "medium"
   },
   "providers": {
     "workbuddy": "high",
