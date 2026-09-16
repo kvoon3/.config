@@ -1,5 +1,5 @@
 default_permission_mode = "yolo"
-default_model = "kimi-code/k3"
+default_model = "kimi-code/kimi-for-coding"
 
 [services.moonshot_search]
 base_url = "https://api.kimi.com/coding/v1/search"
