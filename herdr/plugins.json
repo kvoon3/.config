@@ -37,11 +37,11 @@
     ],
     "source": {
       "kind": "github",
-      "owner": "cesarferreira",
+      "owner": "kvoon3",
       "repo": "herdr-palette",
-      "resolved_commit": "9ca24b801cc0f484ac4287c69936481d9b6232f7",
+      "resolved_commit": "628c12cd5a6635fb65a75870f336b19117d0e777",
       "managed_path": "/Users/kvoon/.config/herdr/plugins/github/cesarferreira.herdr-palette-57e12190d726",
-      "installed_unix_ms": 1788957032882
+      "installed_unix_ms": 1789615246471
     }
   }
 ]
