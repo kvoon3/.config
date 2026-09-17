@@ -25,8 +25,7 @@ github_attestations = false
 [dotfiles]
 "~/.zshrc" = {}
 "~/.zshenv" = {}
-# Windows Git Bash (C:/Program Files/Git/bin/bash.exe, non_login) — separate from macOS zshrc
-"~/.bashrc" = { source = "~/.config/dotfiles/.bashrc.win" }
+"~/.bashrc" = {}
 "~/.bash_profile" = {}
 "~/.gitconfig" = {}
 "~/.agents" = {}
