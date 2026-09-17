@@ -1,0 +1,15 @@
+#!/bin/sh
+# Workhorse: re-apply the config repo after it changes, so files added or
+# renamed upstream actually get symlinked and new tools get installed —
+# `git pull` alone does neither. Idempotent, ~0.1s, detached so git and the
+# shell never wait on it. Invoked directly by git (post-merge) and via exec
+# by post-rewrite (rebase pulls) and post-commit (conflict-resolution merges).
+(
+  cd "$HOME/.config" || exit 0
+  MISE="$(command -v mise || echo "$HOME/.local/bin/mise")"
+  [ -x "$MISE" ] || exit 0
+  LOG="${TMPDIR:-/tmp}/dotfiles-apply.log"
+  [ -d "$HOME/Library/Logs" ] && LOG="$HOME/Library/Logs/dotfiles-apply.log"
+  "$MISE" install >"$LOG" 2>&1
+  "$MISE" dotfiles apply -y >>"$LOG" 2>&1
+) </dev/null >/dev/null 2>&1 &

@@ -1,0 +1,6 @@
+#!/bin/sh
+# A rebase pull rewrites local commits, so post-merge never fires — including
+# plain fast-forward pulls, which git records as a rebase. See post-merge.
+# --git-path (not --git-dir) so core.hooksPath is honoured.
+[ "$1" = "rebase" ] || exit 0
+exec "$(git rev-parse --git-path hooks/post-merge)" "$@"

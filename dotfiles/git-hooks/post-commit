@@ -1,0 +1,5 @@
+#!/bin/sh
+# A pull that hits conflicts is only finished by a manual commit, which fires
+# neither post-merge nor post-rewrite — catch merge commits. See post-merge.
+git rev-parse -q --verify HEAD^2 >/dev/null 2>&1 || exit 0
+exec "$(git rev-parse --git-path hooks/post-merge)" "$@"

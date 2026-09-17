@@ -12,6 +12,14 @@
 	preloadindex = true
 	pager = delta
 
+# Re-apply the dotfiles after the config repo changes (see git-hooks/).
+# Deliberately scoped to ~/.config via includeIf: a global core.hooksPath
+# would replace .git/hooks/ everywhere and silently disable the per-repo
+# pre-commit hooks used in ~/i/* and ~/Projects/*.
+[includeIf "gitdir:~/.config/.git"]
+	path = ~/.config/dotfiles/git-hooks/config
+
+
 # kvoon9 configuration for ~/weila directory
 [includeIf "gitdir:~/weila/"]
 	path = kvoon9

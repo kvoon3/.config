@@ -1,0 +1,3 @@
+# Applied only inside the dotfiles repo, via the includeIf in git/config.
+[core]
+	hooksPath = ~/.config/dotfiles/git-hooks
