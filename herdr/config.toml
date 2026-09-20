@@ -62,8 +62,13 @@ type = "shell"
 command = "\"$HERDR_BIN_PATH\" plugin pane open --plugin cesarferreira.herdr-palette --entrypoint picker"
 description = "Open Herdr Palette"
 
+# A popup custom command already runs in the focused pane's live cwd: Herdr
+# passes cwd=None and spawn_popup_command falls back to cwd_for_pane(focused).
+# No plugin needed to follow the pane you press the key in.
 [[keys.command]]
 key = "prefix+shift+l"
-type = "shell"
-command = "\"$HERDR_BIN_PATH\" plugin pane open --plugin kvoon.herdr-lazygit --entrypoint lazygit"
+type = "popup"
+command = "lazygit"
+width = "100%"
+height = "100%"
 description = "Open lazygit"

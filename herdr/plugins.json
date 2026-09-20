@@ -43,44 +43,5 @@
       "managed_path": "/Users/kvoon/.config/herdr/plugins/github/cesarferreira.herdr-palette-57e12190d726",
       "installed_unix_ms": 1789615246471
     }
-  },
-  {
-    "plugin_id": "kvoon.herdr-lazygit",
-    "name": "Lazygit",
-    "version": "0.1.0",
-    "min_herdr_version": "0.7.0",
-    "description": "Open lazygit on the invoking pane's git repository in a centered modal, to stage, commit, diff, and branch",
-    "manifest_path": "/Users/kvoon/.config/herdr/plugins/github/kvoon.herdr-lazygit-99ac9ed0456a/herdr-plugin.toml",
-    "plugin_root": "/Users/kvoon/.config/herdr/plugins/github/kvoon.herdr-lazygit-99ac9ed0456a",
-    "enabled": true,
-    "platforms": [
-      "linux",
-      "macos"
-    ],
-    "panes": [
-      {
-        "id": "lazygit",
-        "title": "lazygit",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "placement": "popup",
-        "width": "100%",
-        "height": "100%",
-        "command": [
-          "sh",
-          "lazygit.sh"
-        ]
-      }
-    ],
-    "source": {
-      "kind": "github",
-      "owner": "kvoon3",
-      "repo": "herdr-lazygit",
-      "resolved_commit": "b26a9ea0cfaa64e9a2a5cdf885e080ba2f1f4d42",
-      "managed_path": "/Users/kvoon/.config/herdr/plugins/github/kvoon.herdr-lazygit-99ac9ed0456a",
-      "installed_unix_ms": 1789877068013
-    }
   }
 ]
