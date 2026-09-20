@@ -21,8 +21,6 @@
 !git/**
 !mise/
 !mise/**
-!pi/
-!pi/**
 !dotfiles/
 !dotfiles/**
 !windows/
