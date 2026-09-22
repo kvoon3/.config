@@ -66,7 +66,8 @@ description = "Open Herdr Palette"
 # passes cwd=None and spawn_popup_command falls back to cwd_for_pane(focused).
 # No plugin needed to follow the pane you press the key in.
 [[keys.command]]
-key = "prefix+shift+l"
+# Single keystroke after the prefix; sits next to prefix+[ (copy mode).
+key = "prefix+]"
 type = "popup"
 command = "lazygit"
 width = "100%"
