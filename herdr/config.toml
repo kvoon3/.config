@@ -73,3 +73,9 @@ command = "lazygit"
 width = "100%"
 height = "100%"
 description = "Open lazygit"
+
+[[keys.command]]
+key = "prefix+u"
+type = "shell"
+command = "\"$HERDR_BIN_PATH\" plugin pane open --plugin kvoon.herdr-usage --entrypoint usage"
+description = "Open usage"

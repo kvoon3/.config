@@ -43,5 +43,45 @@
       "managed_path": "/Users/kvoon/.config/herdr/plugins/github/cesarferreira.herdr-palette-57e12190d726",
       "installed_unix_ms": 1789615246471
     }
+  },
+  {
+    "plugin_id": "kvoon.herdr-usage",
+    "name": "Usage",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Every pi provider's quota windows, balances, and errors in one popup",
+    "manifest_path": "/Users/kvoon/i/herdr-usage/herdr-plugin.toml",
+    "plugin_root": "/Users/kvoon/i/herdr-usage",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "bun",
+          "install",
+          "--production"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "usage",
+        "title": "Usage",
+        "placement": "popup",
+        "width": "90%",
+        "height": "80%",
+        "command": [
+          "bun",
+          "run",
+          "src/main.tsx"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "local"
+    }
   }
 ]

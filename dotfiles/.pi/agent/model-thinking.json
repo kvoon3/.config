@@ -1,9 +1,10 @@
 {
   "models": {
     "workbuddy/deepseek-v4.1-flash": "max",
-    "workbuddy/cn:glm-5.3": "medium",
     "workbuddy/cn:glm-5.3-flash": "max",
-    "workbuddy/cn:deepseek-v4.1-flash": "max"
+    "workbuddy/cn:deepseek-v4.1-flash": "max",
+    "workbuddy/cn:glm-5.3": "max",
+    "openai-codex/gpt-6-luna": "max"
   },
   "providers": {
     "workbuddy": "high",

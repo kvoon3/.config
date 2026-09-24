@@ -19,7 +19,8 @@
         "pi-minimal-footer/index.ts",
         "pi-split-fork/index.ts",
         "pi-kitty-notify/index.ts",
-        "pi-workbuddy/index.ts"
+        "pi-workbuddy/index.ts",
+        "pi-recent-models/index.ts"
       ],
       "skills": []
     },
@@ -37,7 +38,7 @@
     }
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "0.87.1",
   "terminal": {
     "showTerminalProgress": true
   },

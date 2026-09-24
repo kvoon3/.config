@@ -2,8 +2,8 @@
   "models": [
     "workbuddy/cn:deepseek-v4.1-flash",
     "workbuddy/cn:minimax-m3",
-    "openai-codex/gpt-5.6-luna",
-    "commandcode/gpt-5.6-luna",
+    "openai-codex/gpt-6-luna",
+    "commandcode/gpt-6-luna",
     "zai-coding-cn/glm-5.3-flash"
   ],
   "modelsFromEnabledModels": true,
