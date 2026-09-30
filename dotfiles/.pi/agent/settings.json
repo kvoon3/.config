@@ -4,7 +4,6 @@
     "npm:pi-simplify",
     "npm:pi-terminal-theme",
     "npm:pi-diff-review",
-    "git:github.com/DietrichGebert/ponytail",
     "git:github.com/earendil-works/pi-review",
     "git:github.com/algal/pi-openai-server-compaction",
     "npm:pi-tool-display",
