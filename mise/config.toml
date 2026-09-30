@@ -80,5 +80,8 @@ nub = "latest"
 gh = "latest"
 "npm:@kvoon/gop" = "0.1.0"
 "npm:ctx7" = "latest"
+# The go: backend shells out to `go install`, so the toolchain must be
+# managed here too (otherwise `mise up` fails with "go may be required").
+go = "latest"
 "go:github.com/matysanchez/icloudcli/cmd/icloud-pp-cli" = "latest"
 mr-boxington = "latest"
