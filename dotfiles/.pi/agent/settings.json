@@ -62,5 +62,7 @@
   "hideThinkingBlock": true,
   "defaultProvider": "workbuddy",
   "defaultModel": "cn:deepseek-v4.1-flash",
-  "defaultTools": ["+codemode"]
+  "defaultTools": [
+    "+codemode"
+  ]
 }
