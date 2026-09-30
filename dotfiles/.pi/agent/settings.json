@@ -1,6 +1,4 @@
 {
-  "defaultModel": "cn:deepseek-v4.1-flash",
-  "defaultProvider": "workbuddy",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
@@ -13,7 +11,6 @@
     "npm:pi-language-tutor",
     "git:github.com/kvoon3/pi-review-loop",
     "npm:@ff-labs/pi-fff",
-    "npm:pi-mcp-adapter",
     {
       "source": "git:github.com/kvoon3/pi-extensions",
       "extensions": [
@@ -40,7 +37,7 @@
     }
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.1",
   "terminal": {
     "showTerminalProgress": true
   },
@@ -60,7 +57,10 @@
   "steeringMode": "all",
   "followUpMode": "one-at-a-time",
   "tuiMode": "fullscreen",
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "max",
   "showCacheMissNotices": true,
-  "hideThinkingBlock": true
+  "hideThinkingBlock": true,
+  "defaultProvider": "workbuddy",
+  "defaultModel": "cn:deepseek-v4.1-flash",
+  "defaultTools": ["+codemode"]
 }
