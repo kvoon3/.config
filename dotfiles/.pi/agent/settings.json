@@ -13,6 +13,7 @@
     "npm:pi-language-tutor",
     "git:github.com/kvoon3/pi-review-loop",
     "npm:@ff-labs/pi-fff",
+    "npm:pi-mcp-adapter",
     {
       "source": "git:github.com/kvoon3/pi-extensions",
       "extensions": [
@@ -20,7 +21,8 @@
         "pi-split-fork/index.ts",
         "pi-kitty-notify/index.ts",
         "pi-workbuddy/index.ts",
-        "pi-recent-models/index.ts"
+        "pi-recent-models/index.ts",
+        "pi-voice/index.ts"
       ],
       "skills": []
     },

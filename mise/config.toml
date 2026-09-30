@@ -35,7 +35,10 @@ github_attestations = false
 
 [tools]
 bun = "1.4.0"
-rust = "1"
+# mr_boxington wraps `cargo` with mbx (shared build cache). Needs mise
+# 2026.9.2+; without the option mbx only works as `mbx build`.
+# https://mr-boxington.jdx.dev/setup
+rust = { version = "1", mr_boxington = true }
 uv = "latest"
 
 # ── Package managers ──
@@ -77,3 +80,4 @@ gh = "latest"
 "npm:@kvoon/gop" = "0.1.0"
 "npm:ctx7" = "latest"
 "go:github.com/matysanchez/icloudcli/cmd/icloud-pp-cli" = "latest"
+mr-boxington = "latest"
