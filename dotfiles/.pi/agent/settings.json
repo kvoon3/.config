@@ -63,5 +63,6 @@
   "defaultModel": "cn:deepseek-v4.1-flash",
   "defaultTools": [
     "+codemode"
-  ]
+  ],
+  "deviceId": "7acc239f-637f-4cf7-a6a0-ba9f36435854"
 }

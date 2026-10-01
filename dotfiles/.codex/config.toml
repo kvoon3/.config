@@ -1,6 +1,6 @@
-model = "gpt-6-astra"
+model = "gpt-6.1-sol"
 model_provider = "openai"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "medium"
 personality = "pragmatic"
 approvals_reviewer = "user"
 approval_policy = "never"
@@ -65,11 +65,13 @@ status_line = [
   "weekly-limit"
 ]
 status_line_use_colors = true
+screen_reader_detection_done = true
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
 gpt-6-astra = 4
+"gpt-6.1-sol" = 2
 
 [notice]
 hide_full_access_warning = true
