@@ -33,7 +33,8 @@
         "packages/pi-model-thinking/index.ts"
       ],
       "skills": []
-    }
+    },
+    "npm:pi-context-view"
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
   "lastChangelogVersion": "0.99.1",
