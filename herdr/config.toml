@@ -75,6 +75,14 @@ height = "100%"
 description = "Open lazygit"
 
 [[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = "$SHELL"
+width = "80%"
+height = "70%"
+description = "Float terminal"
+
+[[keys.command]]
 key = "prefix+u"
 type = "shell"
 command = "\"$HERDR_BIN_PATH\" plugin pane open --plugin kvoon.herdr-usage --entrypoint usage"
