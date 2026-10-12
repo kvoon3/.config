@@ -32,9 +32,10 @@
 
 # --- herdr: exclude runtime / generated / machine-local files ---
 herdr/*.log
-herdr/*.sock
+herdr/*.sock*
 herdr/session.json
 herdr/session-history.json
+herdr/session-snapshots/
 herdr/release-notes.json
 herdr/.plugins.lock
 herdr/plugins/
@@ -58,3 +59,4 @@ dotfiles/.secrets.zsh
 dotfiles/.secrets.bash
 dotfiles/.agents/.skill-lock.json
 dotfiles/.agents/skills/terminal-browser
+dotfiles/.agents/skills/ego-browser

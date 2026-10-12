@@ -9,8 +9,8 @@ This is a personal dotfiles repository rooted at `~/.config`.
 - **Never commit secrets or machine-local state**: logs, sockets, session files, credentials, backups, etc.
 - **Keep changes minimal**: this repo is for stable config, not experiments.
 - **Try mise first for installations**: check whether mise can manage the requested software and use it when supported before choosing another installer.
-- For `herdr/`, exclude: `*.log`, `*.sock`, `session.json`, `session-history.json`, `release-notes.json`, `.plugins.lock`, `plugins/`.
-- For `dotfiles/`, exclude: `.secrets.zsh`, `.secrets.bash`, `.agents/.skill-lock.json`, `.agents/skills/terminal-browser`.
+- For `herdr/`, exclude: `*.log`, `*.sock*`, `session.json`, `session-history.json`, `session-snapshots/`, `release-notes.json`, `.plugins.lock`, `plugins/`.
+- For `dotfiles/`, exclude: `.secrets.zsh`, `.secrets.bash`, `.agents/.skill-lock.json`, `.agents/skills/terminal-browser`, `.agents/skills/ego-browser`.
 - For `mise/`, track everything (currently just `config.toml`, the global tool manifest).
 - For `kitty/`, exclude backup files (`*.bak`).
 - For `karabiner/`, exclude `automatic_backups/`.
