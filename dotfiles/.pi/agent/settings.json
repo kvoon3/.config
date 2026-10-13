@@ -33,7 +33,8 @@
       ],
       "skills": []
     },
-    "npm:pi-context-view"
+    "npm:pi-context-view",
+    "https://github.com/monotykamary/pi-tps"
   ],
   "shellCommandPrefix": "shopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\"\n[ -f \"$HOME/.config/dotfiles/functions.sh\" ] && source \"$HOME/.config/dotfiles/functions.sh\"",
   "lastChangelogVersion": "1.2.0",
