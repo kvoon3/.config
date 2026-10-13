@@ -5,9 +5,7 @@
     "npm:pi-terminal-theme",
     "npm:pi-diff-review",
     "git:github.com/earendil-works/pi-review",
-    "git:github.com/algal/pi-openai-server-compaction",
     "npm:pi-tool-display",
-    "npm:pi-language-tutor",
     "git:github.com/kvoon3/pi-review-loop",
     "npm:@ff-labs/pi-fff",
     {
@@ -29,6 +27,7 @@
         "packages/pi-session-recall/session-recall.ts",
         "packages/pi-quit-and-delete/index.ts",
         "packages/pi-codex-subagents/index.ts",
+        "packages/pi-codex-compaction/index.ts",
         "packages/pi-herdr-worktree-jump/index.ts",
         "packages/pi-model-thinking/index.ts"
       ],
