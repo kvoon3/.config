@@ -1,0 +1,95 @@
+#!/bin/sh
+# terminal-browser workaround: `terminal-browser action` spawns agent-browser
+# without --cdp for the real command, so agent-browser launches its own blank
+# Chrome instead of driving the browser in the pane (snapshot/eval return empty,
+# clicks go nowhere, silently).
+#
+# This wrapper re-adds --cdp <port> for the session terminal-browser hands us,
+# which is the form that reliably drives the pane. terminal-browser blocks
+# --cdp on its own command line, hence the env hook (TERMINAL_BROWSER_AGENT).
+#
+# Upstream: https://github.com/zenbu-labs/terminal-browser/issues/60
+# Delete this file and its export in dotfiles/.zshrc once that is fixed.
+#
+# Debug: TERMINAL_BROWSER_AB_DEBUG=1 terminal-browser action -- get url
+
+set -u
+
+debug() { [ -n "${TERMINAL_BROWSER_AB_DEBUG:-}" ] && echo "ab-cdp: $*" >&2 || true; }
+
+# The real agent-browser: TERMINAL_BROWSER_DIST_ROOT is exported by the
+# terminal-browser launcher and inherited here, so this follows the install
+# (release tarball, dev checkout, homebrew cask) instead of hardcoding a path.
+#
+# Never fall back to a name on PATH: if PATH held a wrapper like us that would
+# recurse. Fail loudly instead.
+real="${TERMINAL_BROWSER_AGENT_REAL:-}"
+if [ -z "$real" ] && [ -n "${TERMINAL_BROWSER_DIST_ROOT:-}" ]; then
+  real="$TERMINAL_BROWSER_DIST_ROOT/agent-browser/bin/agent-browser"
+fi
+if [ -z "$real" ]; then
+  real="$HOME/.local/share/terminal-browser/app/agent-browser/bin/agent-browser"
+fi
+if [ ! -x "$real" ]; then
+  echo "ab-cdp: cannot find the real agent-browser (looked at $real);" >&2
+  echo "ab-cdp: set TERMINAL_BROWSER_AGENT_REAL or unset TERMINAL_BROWSER_AGENT." >&2
+  exit 1
+fi
+
+session=""
+for arg in "$@"; do
+  case "$arg" in
+    --session=*) session="${arg#--session=}" ;;
+  esac
+done
+# --session may also arrive as two arguments. Parsed in a function so the
+# positional parameters we exec with stay untouched.
+session_from_pair() {
+  prev=""
+  for arg in "$@"; do
+    if [ "$prev" = "--session" ]; then
+      echo "$arg"
+      return
+    fi
+    prev="$arg"
+  done
+}
+[ -n "$session" ] || session="$(session_from_pair "$@")"
+
+case "$session" in
+  terminal-browser-*) ;;
+  *) debug "session '$session' is not a terminal-browser session; passing through"
+     exec "$real" "$@" ;;
+esac
+
+# Already routed by the caller: do not fight it.
+for arg in "$@"; do
+  case "$arg" in
+    --cdp | --cdp=* | --auto-connect | --auto-connect=*) debug "cdp already given; passing through"; exec "$real" "$@" ;;
+  esac
+done
+
+key="${session#terminal-browser-}"
+port=""
+
+if command -v terminal-browser >/dev/null 2>&1; then
+  # `ls --all --json` lists every browser with its key and cdpPort. Parsed with
+  # awk only: no jq/node on a fresh machine. cdpPort follows key in each record.
+  port="$(terminal-browser ls --all --json 2>/dev/null | awk -v key="$key" '
+    index($0, "\"key\": \"" key "\"") { found = 1 }
+    found && match($0, /"cdpPort": *[0-9]+/) {
+      value = substr($0, RSTART, RLENGTH)
+      gsub(/[^0-9]/, "", value)
+      print value
+      exit
+    }')"
+fi
+
+if [ -z "$port" ]; then
+  # Fail open: behave like an unpatched terminal-browser rather than break.
+  debug "no cdp port for '$key'; passing through (upstream behaviour)"
+  exec "$real" "$@"
+fi
+
+debug "real=$real session=$session port=$port"
+exec "$real" --cdp "$port" "$@"

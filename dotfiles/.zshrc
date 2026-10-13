@@ -39,4 +39,11 @@ eval "$(/Users/kvoon/.local/bin/mise activate zsh)"
 
 export WORKBUDDY_BASE_URL="https://kvoon.tail828f5b.ts.net/v1"
 
+# Workaround: terminal-browser v0.13.4 runs `action` passthrough without --cdp,
+# so agent-browser drives its own blank Chrome instead of the terminal browser,
+# silently (empty snapshots, clicks going nowhere). The wrapper re-adds --cdp
+# and lives in dotfiles/bin. See zenbu-labs/terminal-browser#60; remove both
+# this export and dotfiles/bin/terminal-browser-ab-cdp once that is fixed.
+export TERMINAL_BROWSER_AGENT="$HOME/.config/dotfiles/bin/terminal-browser-ab-cdp"
+
 export PATH="$HOME/.local/bin:$PATH"
