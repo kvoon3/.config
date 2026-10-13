@@ -67,7 +67,14 @@ ripgrep = "latest"
 "npm:@openai/codex" = "latest"
 "npm:@moonshot-ai/kimi-code" = "latest"
 "npm:@kvoon/bb-cli" = "latest"
-opencode = "latest"       # aqua:anomalyco/opencode native binary
+# OpenCode 2 (npm package). V1 and V2 both own the `opencode` command, so
+# only one may be installed: the npm package ships a native binary via
+# optionalDependencies and its postinstall promotes it to `opencode` and
+# `opencode2`. mise skips dependency scripts unless allow_builds approves
+# them, so the tool must approve itself or the shim errors with
+# "@opencode/cli's postinstall script was not run".
+# https://opencode.ai/v2/docs/
+"npm:@opencode/cli" = { version = "latest", allow_builds = ["@opencode/cli"] }
 "npm:agent-browser" = "latest"
 "npm:command-code" = "latest"
 
