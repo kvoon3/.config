@@ -63,6 +63,9 @@ lazygit = "latest"
 ripgrep = "latest"
 
 # ── AI agents ──
+# Native binary via mise's http:grok registry entry (same GCS artifacts as
+# https://x.ai/cli/install.sh). Prefer `mise up` over `grok update`.
+grok = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:@moonshot-ai/kimi-code" = "latest"

@@ -162,5 +162,13 @@
         }
       ]
     }
+  },
+  "modelOverrides": {
+    "zai-coding-cn/glm-5.3-flash": {
+      "input": [
+        "text",
+        "image"
+      ]
+    }
   }
 }

@@ -8,6 +8,9 @@
         "rea-agents@6.4.0",
         "mcp"
       ]
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
     }
   }
 }

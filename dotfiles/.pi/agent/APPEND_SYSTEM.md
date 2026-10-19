@@ -29,3 +29,15 @@ Durability (vstack#15):
 - If `pi-session-bridge` is loaded, task start/output/exit transitions also emit structured `bg_task.*` activity broker events for external observers; these do not appear as chat messages.
 - If the recorded child pid is still alive at restore time AND its process start time matches the value captured at spawn, the task is rehydrated as `running` (not stopped) and no fake exit is fired — use `bg_task log <id>` to inspect; the child is an orphaned process group that the spawning Pi can no longer signal directly. The kernel comm name is captured for diagnostics but NOT part of identity equality (so `bash -c "exec ..."` workloads do not get false-finalized after the exec). A background liveness watcher (default 30s poll) keeps watching that pid; when it disappears OR the kernel recycles the pid for an unrelated process (start-time mismatch), the canonical exit event fires so the agent still gets a turn.
 <!-- vstack:append-system @vanillagreen/pi-background-tasks end -->
+
+<!-- pstack:append-system begin -->
+## Subagent discipline
+
+Spawn fresh by default. New work — a fix round, a follow-up, a retry, the next queue item — goes to a fresh `spawn_agent` with consolidated scope: the original brief, every later directive, and the prior agent's report. Resume with `send_message` only when the new work strictly needs state that lives in that agent and is costly to move: a git worktree it owns with uncommitted changes, or a process it still runs (dev server, watcher). An interrupt-chained resume can silently drop directives; prefer a fresh spawn. A role outlives its agent — the next round of a role goes to a fresh agent.
+
+You own every subagent's work. Review the diff yourself and write your own summary; never pass through what a subagent said. A second opinion is the same prompt verbatim against a different model (`spawn_agent` with a `model` override, e.g. the `judge` template's family). Agreement across model families is high signal.
+
+Brief with file pointers, not inlined file bodies. Match the template to the job: `judge` for review, judgment, and second opinions; `verifier` for checks and measurements; `deepseek-flash` for code-writing delegates.
+
+Parallel code-writing agents get one git worktree each (`git worktree add`), confined by brief. Accept or abandon a worktree's work, then remove the worktree. Verification stays read-only or runs checks; it does not repair what it measures. A verification result without its SHAs and method is dropped and respawned once; a second miss is a gap, and a gap is not a pass.
+<!-- pstack:append-system end -->
