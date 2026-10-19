@@ -39,6 +39,21 @@ gdc() {
   fi
 }
 
+# hunkdiff. `hunk gh …` only reads GH_TOKEN/GITHUB_TOKEN (it ignores gh's
+# own auth config), so borrow the token `gh` already holds.
+hunk() {
+  if [ "$1" = "gh" ] && [ -z "$GH_TOKEN" ] && [ -z "$GITHUB_TOKEN" ]; then
+    local token
+    token="$(command gh auth token 2>/dev/null)"
+    if [ -n "$token" ]; then
+      GH_TOKEN="$token" command hunk "$@"
+      return $?
+    fi
+    printf 'hunk: no GH_TOKEN and `gh auth token` failed; run `gh auth login`\n' >&2
+  fi
+  command hunk "$@"
+}
+
 # -------------------------------- #
 # Directories
 #

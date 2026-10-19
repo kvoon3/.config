@@ -84,5 +84,45 @@
     "source": {
       "kind": "local"
     }
+  },
+  {
+    "plugin_id": "kvoon.worktree-hooks",
+    "name": "Worktree Hooks",
+    "version": "0.1.0",
+    "min_herdr_version": "0.9.0",
+    "description": "Run herdr-worktree.yaml hooks when a worktree workspace is created or opened; projects without the config fall back to auto-installing JS dependencies",
+    "manifest_path": "/Users/kvoon/i/herdr-plugin-worktree-hooks/herdr-plugin.toml",
+    "plugin_root": "/Users/kvoon/i/herdr-plugin-worktree-hooks",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "events": [
+      {
+        "on": "worktree.created",
+        "command": [
+          "node",
+          "bin/event.mjs"
+        ]
+      },
+      {
+        "on": "worktree.opened",
+        "command": [
+          "node",
+          "bin/event.mjs"
+        ]
+      },
+      {
+        "on": "worktree.removed",
+        "command": [
+          "node",
+          "bin/event.mjs"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "local"
+    }
   }
 ]
