@@ -50,6 +50,9 @@ neovim = "0.12.4"
 tree-sitter = "0.26.12"
 harper-ls = "2.8.0"
 "npm:unocss-language-server" = "latest"
+# TypeScript 7 compiler + language server in Rust (`--lsp -stdio`). nvim prefers
+# it for TS/JS outside Vue projects; editors opt in via their own tsdk setting.
+"npm:tsrs" = "latest"
 
 # ── Git / CLI utilities ──
 gitu = "0"
