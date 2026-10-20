@@ -10,7 +10,9 @@
 	process = git-lfs filter-process
 	required = true
 [credential "https://github.com"]
+	useHttpPath = true
 	helper = 
+	helper = !$HOME/.config/dotfiles/bin/git-credential-github
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 

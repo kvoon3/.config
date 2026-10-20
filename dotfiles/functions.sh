@@ -39,6 +39,41 @@ gdc() {
   fi
 }
 
+# gh acts as whichever GitHub account it has active, so a kvoon3 repo surprises
+# you during a kvoon9 session (403s, commits by the wrong identity). Derive the
+# account from origin's owner and hand gh that token instead; git's push path
+# does the same through dotfiles/bin/git-credential-github. `gh auth`/`gh config`
+# skip the rewrite so switching accounts still works, and an explicit GH_TOKEN
+# wins over the derivation.
+gh() {
+  if [ -n "$GH_TOKEN" ]; then
+    command gh "$@"
+    return $?
+  fi
+
+  case "$1" in
+  auth | config)
+    command gh "$@"
+    return $?
+    ;;
+  esac
+
+  local url account token
+  url="$(command git config --get remote.origin.url 2>/dev/null)" || url=''
+  case "$url" in
+  *github.com[:/]kvoon3/*) account=kvoon3 ;;
+  *github.com[:/]kvoon9/*) account=kvoon9 ;;
+  *) account='' ;;
+  esac
+
+  if [ -n "$account" ] && token="$(command gh auth token -u "$account" 2>/dev/null)" && [ -n "$token" ]; then
+    GH_TOKEN="$token" command gh "$@"
+    return $?
+  fi
+
+  command gh "$@"
+}
+
 # hunkdiff. `hunk gh …` only reads GH_TOKEN/GITHUB_TOKEN (it ignores gh's
 # own auth config), so borrow the token `gh` already holds.
 hunk() {
