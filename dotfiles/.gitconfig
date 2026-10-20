@@ -1,3 +1,5 @@
+[rerere]
+	enabled = true
 [gitbutler]
 	aiModelProvider = anthropic
 	aiAnthropicKeyOption = butlerAPI
