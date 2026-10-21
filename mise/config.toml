@@ -44,6 +44,8 @@ uv = "latest"
 # ── Package managers ──
 pnpm = "latest"
 "npm:@antfu/ni" = "latest"
+# upm — fast npm-registry client
+"npm:upm" = "latest"
 
 # ── Editors & terminal ──
 neovim = "0.12.4"
