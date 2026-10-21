@@ -65,13 +65,17 @@ description = "Open Herdr Palette"
 # A popup custom command already runs in the focused pane's live cwd: Herdr
 # passes cwd=None and spawn_popup_command falls back to cwd_for_pane(focused).
 # No plugin needed to follow the pane you press the key in.
+#
+# `type = "pane"` instead of `popup`: a session-modal popup swallows every
+# mouse event, so Herdr's sidebar and tab bar stop responding for as long as
+# lazygit runs (src/client/shell/mouse.rs handles a popup hit and returns before
+# the chrome). A temporary zoomed pane keeps the sidebar clickable and still
+# closes itself when lazygit exits; its cwd follows the focused pane too.
 [[keys.command]]
 # Single keystroke after the prefix; sits next to prefix+[ (copy mode).
 key = "prefix+]"
-type = "popup"
+type = "pane"
 command = "lazygit"
-width = "100%"
-height = "100%"
 description = "Open lazygit"
 
 # Read-only counterpart to prefix+]: lazygit changes git state, hunk reviews
