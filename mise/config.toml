@@ -83,6 +83,7 @@ grok = "latest"
 "npm:@opencode/cli" = { version = "latest", allow_builds = ["@opencode/cli"] }
 "npm:agent-browser" = "latest"
 "npm:command-code" = "latest"
+"npm:freebuff" = "latest"
 
 # ── Node dev helpers ──
 node = "24"
@@ -99,3 +100,4 @@ go = "latest"
 mr-boxington = "latest"
 claude = "latest"
 "npm:hunkdiff" = "0.23.0"
+git-lfs = "latest"
