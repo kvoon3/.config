@@ -13,6 +13,9 @@ alias tree="find . \( -name 'node_modules' -o -name '.git' \) -prune -o -print |
 alias sk='skat'
 alias al='alacritty'
 
+# ——— Agents ———
+alias cc='claude'
+
 # ——— Node / Vite / pnpm ———
 alias nio="ni --prefer-offline"
 alias s="nr start"

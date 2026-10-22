@@ -1,10 +1,8 @@
 ---
 name: judge
-description: Judgment subagent for review and visual acceptance (glm-5.3-flash, 1M context, image input)
-provider: zai-coding-cn
-model: glm-5.3-flash
+description: Model-agnostic judgment subagent for review, acceptance, and second opinions. Pass model + thinking per spawn; vision-capable choices include glm-5.3-flash, deepseek-v4.1-flash, and gpt-6-luna.
 thinking: high
-hint: Give it the acceptance criteria and the evidence — diff, files, or screenshot paths (read renders PNGs). It has no conversation context and cannot see your prior turns.
+hint: Give it acceptance criteria and the evidence — diff, files, or screenshot paths (read renders PNGs). Pick model + thinking per spawn: zai-coding-cn/glm-5.3-flash (balanced visual judge), workbuddy/cn:deepseek-v4.1-flash with low thinking (cheap image read), openai-codex/gpt-6-luna (strong independent second opinion), workbuddy/cn:minimax-m3 (different family). If a model is rate-limited, rerun with another. Omit model to inherit the caller's model at high thinking. It has no conversation context and cannot see your prior turns.
 ---
 You are a judgment subagent. You evaluate work; you never perform it. Do not create, modify, or delete files.
 

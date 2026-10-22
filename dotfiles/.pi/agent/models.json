@@ -161,14 +161,26 @@
           "contextWindow": 196608
         }
       ]
-    }
-  },
-  "modelOverrides": {
-    "zai-coding-cn/glm-5.3-flash": {
-      "input": [
-        "text",
-        "image"
-      ]
+    },
+    "zai-coding-cn": {
+      "modelOverrides": {
+        "glm-5.3-flash": {
+          "input": [
+            "text",
+            "image"
+          ]
+        }
+      }
+    },
+    "workbuddy": {
+      "modelOverrides": {
+        "cn:deepseek-v4.1-flash": {
+          "input": [
+            "text",
+            "image"
+          ]
+        }
+      }
     }
   }
 }
