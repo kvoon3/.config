@@ -2,7 +2,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-z)
 
-alias n="nvim ."
 alias zshconfig='nvim ~/.zshrc'
 alias alconfig='nvim ~/.config/alacritty/alacritty.toml'
 alias vimrc='nvim ~/.code.vimrc'
