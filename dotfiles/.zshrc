@@ -36,8 +36,6 @@ export PATH="$HOME/.local/share/mise/shims:$PATH"
 eval "$(/Users/kvoon/.local/bin/mise activate zsh)"
 [ -f ~/.config/dotfiles/.secrets.zsh ] && source ~/.config/dotfiles/.secrets.zsh
 
-export WORKBUDDY_BASE_URL="https://kvoon.tail828f5b.ts.net/v1"
-
 # Workaround: terminal-browser v0.13.4 runs `action` passthrough without --cdp,
 # so agent-browser drives its own blank Chrome instead of the terminal browser,
 # silently (empty snapshots, clicks going nowhere). The wrapper re-adds --cdp

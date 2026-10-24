@@ -1,8 +1,8 @@
 ---
 name: vision
-description: Image inspection subagent (WorkBuddy deepseek-v4.1-flash, 1M context, low thinking) — read screenshots, diagrams, and photos and report exactly what they show
-provider: workbuddy
-model: cn:deepseek-v4.1-flash
+description: Image inspection subagent (GLM-5.3-Flash, 1M context, low thinking) — read screenshots, diagrams, and photos and report exactly what they show
+provider: zai-coding-cn
+model: glm-5.3-flash
 thinking: low
 tools: read,ls,find
 hint: Give it exact image paths (PNG/JPEG) and what to extract — visible text, layout, colors, or UI state. It has no conversation context and cannot see images you did not point it at.

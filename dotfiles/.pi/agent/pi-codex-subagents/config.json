@@ -1,7 +1,5 @@
 {
   "models": [
-    "workbuddy/cn:deepseek-v4.1-flash",
-    "workbuddy/cn:minimax-m3",
     "openai-codex/gpt-6-luna",
     "commandcode/gpt-6-luna",
     "zai-coding-cn/glm-5.3-flash"
@@ -9,8 +7,7 @@
   "modelsFromEnabledModels": true,
   "defaults": {
     "extensions": [
-      "pi-commandcode-provider",
-      "~/.pi/agent/git/github.com/kvoon3/pi-extensions/pi-workbuddy/index.ts"
+      "pi-commandcode-provider"
     ]
   }
 }

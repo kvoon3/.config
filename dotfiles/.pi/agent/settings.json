@@ -1,4 +1,6 @@
 {
+  "defaultModel": "auto/deepseek-v4.1-flash",
+  "defaultProvider": "magpie",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
@@ -14,7 +16,6 @@
         "pi-minimal-footer/index.ts",
         "pi-split-fork/index.ts",
         "pi-kitty-notify/index.ts",
-        "pi-workbuddy/index.ts",
         "pi-recent-models/index.ts",
         "pi-voice/index.ts"
       ],
@@ -60,8 +61,6 @@
   "defaultThinkingLevel": "max",
   "showCacheMissNotices": true,
   "hideThinkingBlock": true,
-  "defaultProvider": "workbuddy",
-  "defaultModel": "cn:deepseek-v4.1-flash",
   "defaultTools": [
     "+codemode"
   ],
