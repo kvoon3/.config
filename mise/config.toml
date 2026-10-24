@@ -105,3 +105,7 @@ claude = "latest"
 git-lfs = "latest"
 "pipx:ddgr" = "latest"
 1password-cli = "latest"
+# real-icons rasterises SVG icon packs with `magick`. The Homebrew bottle ships
+# without a librsvg delegate, so its internal SVG renderer cannot draw
+# Catppuccin's pastel stroke icons; conda-forge's build bundles RSVG 2.62.
+"conda:imagemagick" = "7.1.2_31"
