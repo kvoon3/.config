@@ -1,5 +1,1360 @@
 {
   "providers": {
+    "magpie": {
+      "api": "openai-completions",
+      "apiKey": "magpie",
+      "baseUrl": "http://127.0.0.1:3425/v1",
+      "compat": {
+        "sendSessionAffinityHeaders": true
+      },
+      "models": [
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "auto/GLM-5.3-Flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-Flash \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "auto/glm-5.3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3 \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "auto/glm-5.2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.2 \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 960000,
+          "id": "auto/hy4-preview",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Hy4 preview \u00b7 WorkBuddy \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 192000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "auto/hy3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Hy3 \u00b7 WorkBuddy \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.1,
+            "cacheWrite": 0,
+            "input": 1,
+            "output": 2.7
+          },
+          "id": "auto/step-5-preview",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Step-5-Preview \u00b7 WorkBuddy \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "auto/deepseek-v4.1-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Deepseek-V4.1-Flash \u00b7 WorkBuddy \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.015,
+            "cacheWrite": 0,
+            "input": 0.15,
+            "output": 0.6
+          },
+          "id": "auto/minimax-m3.1-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "MiniMax-M3.1-Flash \u00b7 WorkBuddy \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.022,
+            "cacheWrite": 0,
+            "input": 0.66,
+            "output": 1.98
+          },
+          "id": "auto/deepseek-v4-pro",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Deepseek-V4-Pro \u00b7 WorkBuddy \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "api": "openai-responses",
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 0.5,
+            "cacheWrite": 0,
+            "input": 2,
+            "output": 6
+          },
+          "id": "auto/grok-4.7",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 256000,
+          "name": "Grok 4.7 \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.2,
+            "cacheWrite": 5,
+            "input": 4,
+            "output": 20
+          },
+          "id": "auto/claude-opus-5-5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Claude Opus 5.5 \u00b7 routing group",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "openrouter/recursive/flint-v1.0:free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 235929,
+          "name": "Flint (free) \u00b7 OpenRouter",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "cost": {
+            "cacheRead": 0.19421,
+            "cacheWrite": 0,
+            "input": 0.89637,
+            "output": 3.58548
+          },
+          "id": "remote-magpie/auto/glm-5.1",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.1 \u00b7 routing group \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/auto/glm-5.2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.2 \u00b7 routing group \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/auto/glm-5.3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3 \u00b7 routing group \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "remote-magpie/auto/glm-5.3-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-Flash \u00b7 routing group \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 131072,
+          "cost": {
+            "cacheRead": 0.11,
+            "cacheWrite": 0,
+            "input": 0.6,
+            "output": 2.2
+          },
+          "id": "remote-magpie/zhipu/glm-4.5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 98304,
+          "name": "GLM-4.5 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 131072,
+          "cost": {
+            "cacheRead": 0.0239,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.89637
+          },
+          "id": "remote-magpie/zhipu/glm-4.5-air",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 98304,
+          "name": "GLM-4.5-Air \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 204800,
+          "cost": {
+            "cacheRead": 0.11,
+            "cacheWrite": 0,
+            "input": 0.6,
+            "output": 2.2
+          },
+          "id": "remote-magpie/zhipu/glm-4.6",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-4.6 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 204800,
+          "cost": {
+            "cacheRead": 0.08964,
+            "cacheWrite": 0,
+            "input": 0.44819,
+            "output": 2.09153
+          },
+          "id": "remote-magpie/zhipu/glm-4.7",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-4.7 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 204800,
+          "cost": {
+            "cacheRead": 0.1494,
+            "cacheWrite": 0,
+            "input": 0.59758,
+            "output": 2.68911
+          },
+          "id": "remote-magpie/zhipu/glm-5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "id": "remote-magpie/zhipu/glm-5-turbo",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5-Turbo \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 200000,
+          "cost": {
+            "cacheRead": 0.19421,
+            "cacheWrite": 0,
+            "input": 0.89637,
+            "output": 3.58548
+          },
+          "id": "remote-magpie/zhipu/glm-5.1",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.1 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/zhipu/glm-5.2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.2 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/zhipu/glm-5.3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "remote-magpie/zhipu/glm-5.3-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-Flash \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.08516,
+            "cacheWrite": 0,
+            "input": 0.29879,
+            "output": 1.04577
+          },
+          "id": "remote-magpie/zhipu/glm-5.3-flashx",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-FlashX \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "api": "anthropic-messages",
+          "baseUrl": "http://127.0.0.1:3425",
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/zcode/GLM-5.3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "GLM-5.3 \u00b7 ZCode \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "api": "anthropic-messages",
+          "baseUrl": "http://127.0.0.1:3425",
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "remote-magpie/zcode/GLM-5.3-Flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "GLM-5.3-Flash \u00b7 ZCode \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "api": "anthropic-messages",
+          "baseUrl": "http://127.0.0.1:3425",
+          "contextWindow": 1000000,
+          "id": "remote-magpie/zcode/GLM-5.3-Trial",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "GLM-5.3-Trial \u00b7 ZCode \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 256000,
+          "id": "remote-magpie/workbuddy/auto",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 32000,
+          "name": "Auto \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 960000,
+          "id": "remote-magpie/workbuddy/hy4-preview",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Hy4 preview \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 192000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/workbuddy/hy3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Hy3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 192000,
+          "id": "remote-magpie/workbuddy/hy3-x",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Hy3 (X) \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.1,
+            "cacheWrite": 0,
+            "input": 1,
+            "output": 2.7
+          },
+          "id": "remote-magpie/workbuddy/step-5-preview",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Step-5-Preview \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/workbuddy/space-bunny",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Space-Bunny \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/workbuddy/deepseek-v4.1-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Deepseek-V4.1-Flash \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/workbuddy/glm-5.3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "GLM-5.3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "remote-magpie/workbuddy/glm-5.3-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-Flash \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/workbuddy/glm-5.2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "GLM-5.2 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 200000,
+          "cost": {
+            "cacheRead": 0.19421,
+            "cacheWrite": 0,
+            "input": 0.89637,
+            "output": 3.58548
+          },
+          "id": "remote-magpie/workbuddy/glm-5.1",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 48000,
+          "name": "GLM-5.1 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 200000,
+          "cost": {
+            "cacheRead": 0.17927,
+            "cacheWrite": 0,
+            "input": 0.74698,
+            "output": 3.28669
+          },
+          "id": "remote-magpie/workbuddy/glm-5v-turbo",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "GLM-5v-Turbo \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.015,
+            "cacheWrite": 0,
+            "input": 0.15,
+            "output": 0.6
+          },
+          "id": "remote-magpie/workbuddy/minimax-m3.1-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "MiniMax-M3.1-Flash \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 512000,
+          "cost": {
+            "cacheRead": 0.06,
+            "cacheWrite": 0,
+            "input": 0.3,
+            "output": 1.2
+          },
+          "id": "remote-magpie/workbuddy/minimax-m3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "MiniMax-M3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.2,
+            "cacheWrite": 2,
+            "input": 2,
+            "output": 10
+          },
+          "id": "remote-magpie/workbuddy/kimi-k3.1-pro",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 32000,
+          "name": "Kimi-K3.1-Pro \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/workbuddy/kimi-k3-1",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 32000,
+          "name": "Kimi-K3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/workbuddy/kimi-k2.8-preview",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 64000,
+          "name": "Kimi-K2.8-Preview \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.022,
+            "cacheWrite": 0,
+            "input": 0.66,
+            "output": 1.98
+          },
+          "id": "remote-magpie/workbuddy/deepseek-v4-pro",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Deepseek-V4-Pro \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.0036,
+            "cacheWrite": 0,
+            "input": 0.435,
+            "output": 0.87
+          },
+          "id": "remote-magpie/workbuddy/mimo-v2.6-pro",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "Xiaomi MiMo-V2.6-Pro \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "api": "openai-responses",
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 0.5,
+            "cacheWrite": 0,
+            "input": 2,
+            "output": 6
+          },
+          "id": "grok/grok-4.7",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 256000,
+          "name": "Grok 4.7 \u00b7 Grok (SuperGrok)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "api": "openai-responses",
+          "contextWindow": 500000,
+          "cost": {
+            "cacheRead": 0.5,
+            "cacheWrite": 0,
+            "input": 2,
+            "output": 6
+          },
+          "id": "grok/grok-4.7@500k",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "Grok 4.7 @ 500k \u00b7 Grok (SuperGrok)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "api": "openai-responses",
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 1,
+            "cacheWrite": 0,
+            "input": 4,
+            "output": 12
+          },
+          "id": "grok/grok-4.7-build-fast",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "Grok 4.7 Fast \u00b7 Grok (SuperGrok)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "api": "openai-responses",
+          "contextWindow": 500000,
+          "cost": {
+            "cacheRead": 1,
+            "cacheWrite": 0,
+            "input": 4,
+            "output": 12
+          },
+          "id": "grok/grok-4.7-build-fast@500k",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "Grok 4.7 Fast @ 500k \u00b7 Grok (SuperGrok)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "api": "openai-responses",
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 0.5,
+            "cacheWrite": 0,
+            "input": 2,
+            "output": 6
+          },
+          "id": "grok/grok-4.6",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 256000,
+          "name": "Grok 4.6 \u00b7 Grok (SuperGrok)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "api": "openai-responses",
+          "contextWindow": 500000,
+          "cost": {
+            "cacheRead": 0.5,
+            "cacheWrite": 0,
+            "input": 2,
+            "output": 6
+          },
+          "id": "grok/grok-4.6@500k",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "Grok 4.6 @ 500k \u00b7 Grok (SuperGrok)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "api": "anthropic-messages",
+          "baseUrl": "http://127.0.0.1:3425",
+          "compat": {
+            "forceAdaptiveThinking": true
+          },
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.2,
+            "cacheWrite": 5,
+            "input": 4,
+            "output": 20
+          },
+          "id": "sub2tok/claude-opus-5-5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "claude-opus-5-5 \u00b7 sub2tok",
+          "promptCache": {
+            "long": 3600,
+            "short": 300
+          },
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "xhigh": null
+          }
+        }
+      ],
+      "name": "magpie"
+    },
     "tinyseek": {
       "name": "TinySeek",
       "baseUrl": "https://api.yjs.im/v1",
@@ -165,16 +1520,6 @@
     "zai-coding-cn": {
       "modelOverrides": {
         "glm-5.3-flash": {
-          "input": [
-            "text",
-            "image"
-          ]
-        }
-      }
-    },
-    "workbuddy": {
-      "modelOverrides": {
-        "cn:deepseek-v4.1-flash": {
           "input": [
             "text",
             "image"
