@@ -9,296 +9,97 @@
       },
       "models": [
         {
-          "contextWindow": 1000000,
           "cost": {
             "cacheRead": 0.03436,
             "cacheWrite": 0,
             "input": 0.11952,
             "output": 0.41831
           },
-          "id": "auto/GLM-5.3-Flash",
+          "id": "auto/glm-5.3-flash",
           "input": [
             "text",
             "image"
           ],
-          "maxTokens": 131072,
-          "name": "GLM-5.3-Flash \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
+          "name": "GLM-5.3-Flash · routing group",
+          "reasoning": false
         },
         {
           "contextWindow": 1000000,
           "cost": {
-            "cacheRead": 0.29879,
-            "cacheWrite": 0,
-            "input": 1.19516,
-            "output": 4.18306
-          },
-          "id": "auto/glm-5.3",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "GLM-5.3 \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.29879,
-            "cacheWrite": 0,
-            "input": 1.19516,
-            "output": 4.18306
-          },
-          "id": "auto/glm-5.2",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "GLM-5.2 \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": null,
-            "max": null,
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 960000,
-          "id": "auto/hy4-preview",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 64000,
-          "name": "Hy4 preview \u00b7 WorkBuddy \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": null,
-            "max": null,
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 192000,
-          "cost": {
-            "cacheRead": 0,
-            "cacheWrite": 0,
-            "input": 0,
-            "output": 0
-          },
-          "id": "auto/hy3",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 64000,
-          "name": "Hy3 \u00b7 WorkBuddy \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.1,
-            "cacheWrite": 0,
-            "input": 1,
-            "output": 2.7
-          },
-          "id": "auto/step-5-preview",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 64000,
-          "name": "Step-5-Preview \u00b7 WorkBuddy \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "id": "auto/deepseek-v4.1-flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 128000,
-          "name": "Deepseek-V4.1-Flash \u00b7 WorkBuddy \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.015,
+            "cacheRead": 0.003,
             "cacheWrite": 0,
             "input": 0.15,
             "output": 0.6
           },
-          "id": "auto/minimax-m3.1-flash",
+          "id": "remote-magpie/group/deepseek-flash",
           "input": [
             "text",
             "image"
           ],
           "maxTokens": 128000,
-          "name": "MiniMax-M3.1-Flash \u00b7 WorkBuddy \u00b7 routing group",
+          "name": "deepseek-flash · routing group · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
             "low": "low",
             "max": "max",
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": "xhigh"
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.022,
-            "cacheWrite": 0,
-            "input": 0.66,
-            "output": 1.98
-          },
-          "id": "auto/deepseek-v4-pro",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 128000,
-          "name": "Deepseek-V4-Pro \u00b7 WorkBuddy \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": null,
-            "max": null,
             "medium": null,
-            "minimal": null,
-            "off": "none",
-            "xhigh": "xhigh"
-          }
-        },
-        {
-          "api": "openai-responses",
-          "contextWindow": 256000,
-          "cost": {
-            "cacheRead": 0.5,
-            "cacheWrite": 0,
-            "input": 2,
-            "output": 6
-          },
-          "id": "auto/grok-4.7",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 256000,
-          "name": "Grok 4.7 \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": "xhigh"
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.2,
-            "cacheWrite": 5,
-            "input": 4,
-            "output": 20
-          },
-          "id": "auto/claude-opus-5-5",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 128000,
-          "name": "Claude Opus 5.5 \u00b7 routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
             "minimal": null,
             "off": null,
             "xhigh": null
           }
         },
         {
-          "contextWindow": 262144,
+          "contextWindow": 1048576,
           "cost": {
-            "cacheRead": 0,
+            "cacheRead": 0.29879,
             "cacheWrite": 0,
-            "input": 0,
-            "output": 0
+            "input": 1.19516,
+            "output": 4.18306
           },
-          "id": "openrouter/recursive/flint-v1.0:free",
+          "id": "remote-magpie/auto/GLM-5.3",
           "input": [
             "text",
             "image"
           ],
-          "maxTokens": 235929,
-          "name": "Flint (free) \u00b7 OpenRouter",
-          "reasoning": true
+          "maxTokens": 307200,
+          "name": "GLM-5.3 · routing group · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "remote-magpie/auto/GLM-5.3-Flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-Flash · routing group · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
         },
         {
           "contextWindow": 200000,
@@ -314,7 +115,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.1 \u00b7 routing group \u00b7 Remote magpie",
+          "name": "GLM-5.1 · routing group · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -340,64 +141,12 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.2 \u00b7 routing group \u00b7 Remote magpie",
+          "name": "GLM-5.2 · routing group · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
             "low": null,
             "max": null,
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.29879,
-            "cacheWrite": 0,
-            "input": 1.19516,
-            "output": 4.18306
-          },
-          "id": "remote-magpie/auto/glm-5.3",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "GLM-5.3 \u00b7 routing group \u00b7 Remote magpie",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.03436,
-            "cacheWrite": 0,
-            "input": 0.11952,
-            "output": 0.41831
-          },
-          "id": "remote-magpie/auto/glm-5.3-flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "GLM-5.3-Flash \u00b7 routing group \u00b7 Remote magpie",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
             "medium": null,
             "minimal": null,
             "off": null,
@@ -418,7 +167,7 @@
             "image"
           ],
           "maxTokens": 98304,
-          "name": "GLM-4.5 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-4.5 · Zhipu GLM · Remote magpie",
           "reasoning": true
         },
         {
@@ -435,7 +184,7 @@
             "image"
           ],
           "maxTokens": 98304,
-          "name": "GLM-4.5-Air \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-4.5-Air · Zhipu GLM · Remote magpie",
           "reasoning": true
         },
         {
@@ -452,7 +201,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-4.6 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-4.6 · Zhipu GLM · Remote magpie",
           "reasoning": true
         },
         {
@@ -469,7 +218,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-4.7 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-4.7 · Zhipu GLM · Remote magpie",
           "reasoning": true
         },
         {
@@ -486,7 +235,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-5 · Zhipu GLM · Remote magpie",
           "reasoning": true
         },
         {
@@ -497,7 +246,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5-Turbo \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-5-Turbo · Zhipu GLM · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -523,7 +272,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.1 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-5.1 · Zhipu GLM · Remote magpie",
           "reasoning": true
         },
         {
@@ -540,7 +289,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.2 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-5.2 · Zhipu GLM · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -566,7 +315,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.3 \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-5.3 · Zhipu GLM · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -592,7 +341,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.3-Flash \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-5.3-Flash · Zhipu GLM · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -618,7 +367,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.3-FlashX \u00b7 Zhipu GLM \u00b7 Remote magpie",
+          "name": "GLM-5.3-FlashX · Zhipu GLM · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -646,7 +395,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "GLM-5.3 \u00b7 ZCode \u00b7 Remote magpie",
+          "name": "GLM-5.3 · ZCode · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -674,7 +423,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "GLM-5.3-Flash \u00b7 ZCode \u00b7 Remote magpie",
+          "name": "GLM-5.3-Flash · ZCode · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -696,7 +445,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "GLM-5.3-Trial \u00b7 ZCode \u00b7 Remote magpie",
+          "name": "GLM-5.3-Trial · ZCode · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -716,7 +465,7 @@
             "image"
           ],
           "maxTokens": 32000,
-          "name": "Auto \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Auto · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -736,7 +485,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "Hy4 preview \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Hy4 preview · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -762,7 +511,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "Hy3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Hy3 · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -782,7 +531,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "Hy3 (X) \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Hy3 (X) · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -808,7 +557,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "Step-5-Preview \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Step-5-Preview · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -828,7 +577,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "Space-Bunny \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Space-Bunny · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -848,7 +597,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "Deepseek-V4.1-Flash \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Deepseek-V4.1-Flash · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -874,7 +623,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "GLM-5.3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "GLM-5.3 · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -900,7 +649,7 @@
             "image"
           ],
           "maxTokens": 131072,
-          "name": "GLM-5.3-Flash \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "GLM-5.3-Flash · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -926,7 +675,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "GLM-5.2 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "GLM-5.2 · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -952,7 +701,7 @@
             "image"
           ],
           "maxTokens": 48000,
-          "name": "GLM-5.1 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "GLM-5.1 · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -978,7 +727,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "GLM-5v-Turbo \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "GLM-5v-Turbo · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1004,7 +753,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "MiniMax-M3.1-Flash \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "MiniMax-M3.1-Flash · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1030,7 +779,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "MiniMax-M3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "MiniMax-M3 · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1056,7 +805,7 @@
             "image"
           ],
           "maxTokens": 32000,
-          "name": "Kimi-K3.1-Pro \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Kimi-K3.1-Pro · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1076,7 +825,7 @@
             "image"
           ],
           "maxTokens": 32000,
-          "name": "Kimi-K3 \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Kimi-K3 · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1096,7 +845,7 @@
             "image"
           ],
           "maxTokens": 64000,
-          "name": "Kimi-K2.8-Preview \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Kimi-K2.8-Preview · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1122,7 +871,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "Deepseek-V4-Pro \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Deepseek-V4-Pro · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1148,7 +897,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "Xiaomi MiMo-V2.6-Pro \u00b7 WorkBuddy \u00b7 Remote magpie",
+          "name": "Xiaomi MiMo-V2.6-Pro · WorkBuddy · Remote magpie",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1159,6 +908,478 @@
             "off": null,
             "xhigh": null
           }
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/opencode-zen-free/flint-40b-free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 65536,
+          "name": "Flint 40B Free · OpenCode Zen Free · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 200000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/opencode-zen-free/mimo-v2.6-flash-free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 32000,
+          "name": "MiMo-V2.6-Flash Free · OpenCode Zen Free · Remote magpie",
+          "reasoning": true
+        },
+        {
+          "contextWindow": 200000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/opencode-zen-free/deepseek-v4.1-flash-free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 32000,
+          "name": "DeepSeek V4.1 Flash Free · OpenCode Zen Free · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 200000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/opencode-zen-free/glm-5.3-flash-free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 32000,
+          "name": "GLM-5.3-Flash Free · OpenCode Zen Free · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/opencode-zen-free/nemotron-3.5-super-vl-free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "Nemotron 3.5 Super VL Free · OpenCode Zen Free · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": "minimal",
+            "off": "none",
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/opencode-zen-free/nemotron-3.5-lightning-free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "Nemotron 3.5 Lightning Free · OpenCode Zen Free · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/opencode-zen-free/beam-free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "Beam Free · OpenCode Zen Free · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/raccoon/raccoon-8c4485",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "Raccoon-Work · 商汤小浣熊 · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/raccoon/raccoon-19b265",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "Raccoon-Work-260817-A · 商汤小浣熊 · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/raccoon/raccoon-405a1c",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "Raccoon-Work-260817-B · 商汤小浣熊 · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/raccoon/sn-sensenova-6-8-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 63999,
+          "name": "SenseNova-6.8-Flash · 商汤小浣熊 · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "remote-magpie/raccoon/sn-sensenova-6-8-flash-lite",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 63999,
+          "name": "SenseNova-6.8-Flash-Lite · 商汤小浣熊 · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "remote-magpie/raccoon/sn-glm-5-3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "GLM-5-3 · 商汤小浣熊 · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.3,
+            "cacheWrite": 3,
+            "input": 3,
+            "output": 15
+          },
+          "id": "remote-magpie/raccoon/sn-kimi-k3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "Kimi-K3 · 商汤小浣熊 · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "remote-magpie/raccoon/sn-glm-5-3-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "GLM-5-3-Flash · 商汤小浣熊 · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/raccoon/sn-deepseek-v4-1-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "DeepSeek-V4.1-Flash · 商汤小浣熊 · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.003,
+            "cacheWrite": 0,
+            "input": 0.15,
+            "output": 0.6
+          },
+          "id": "remote-magpie/raccoon/sn-deepseek-v4-1-flash-1017",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 100000,
+          "name": "DeepSeek-V4.1-Flash-1017 · 商汤小浣熊 · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 180000,
+          "id": "remote-magpie/raccoon/raccoon-chat-ml-5-5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 80000,
+          "name": "Raccoon Chat (默认) · 商汤小浣熊 · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1048576,
+          "id": "remote-magpie/autoclaw-cn/zaicoding_glm-5.3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 307200,
+          "name": "GLM-5.3 · AutoClaw 国内 (Zhipu) · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "id": "remote-magpie/autoclaw-cn/zai_glm-5.3-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-Flash · AutoClaw 国内 (Zhipu) · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/qwenwork/flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "标准 · QwenWork · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/qwenwork/pro",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "高级 · QwenWork · Remote magpie",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1000000,
+          "id": "remote-magpie/qwenwork/qwen3.8-max-preview",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "Qwen3.8-Max · QwenWork · Remote magpie",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": null,
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": "xhigh"
+          }
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "openrouter/recursive/flint-v1.0:free",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 235929,
+          "name": "Flint (free) · OpenRouter",
+          "reasoning": true
         },
         {
           "api": "openai-responses",
@@ -1175,7 +1396,7 @@
             "image"
           ],
           "maxTokens": 256000,
-          "name": "Grok 4.7 \u00b7 Grok (SuperGrok)",
+          "name": "Grok 4.7 · Grok (SuperGrok)",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1201,7 +1422,7 @@
             "text",
             "image"
           ],
-          "name": "Grok 4.7 @ 500k \u00b7 Grok (SuperGrok)",
+          "name": "Grok 4.7 @ 500k · Grok (SuperGrok)",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1227,7 +1448,7 @@
             "text",
             "image"
           ],
-          "name": "Grok 4.7 Fast \u00b7 Grok (SuperGrok)",
+          "name": "Grok 4.7 Fast · Grok (SuperGrok)",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1253,7 +1474,7 @@
             "text",
             "image"
           ],
-          "name": "Grok 4.7 Fast @ 500k \u00b7 Grok (SuperGrok)",
+          "name": "Grok 4.7 Fast @ 500k · Grok (SuperGrok)",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1280,7 +1501,7 @@
             "image"
           ],
           "maxTokens": 256000,
-          "name": "Grok 4.6 \u00b7 Grok (SuperGrok)",
+          "name": "Grok 4.6 · Grok (SuperGrok)",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1306,7 +1527,7 @@
             "text",
             "image"
           ],
-          "name": "Grok 4.6 @ 500k \u00b7 Grok (SuperGrok)",
+          "name": "Grok 4.6 @ 500k · Grok (SuperGrok)",
           "reasoning": true,
           "thinkingLevelMap": {
             "high": "high",
@@ -1337,7 +1558,7 @@
             "image"
           ],
           "maxTokens": 128000,
-          "name": "claude-opus-5-5 \u00b7 sub2tok",
+          "name": "claude-opus-5-5 · sub2tok",
           "promptCache": {
             "long": 3600,
             "short": 300

@@ -1,5 +1,5 @@
 {
-  "defaultModel": "auto/deepseek-v4.1-flash",
+  "defaultModel": "remote-magpie/group/deepseek-flash",
   "defaultProvider": "magpie",
   "packages": [
     "npm:pi-commandcode-provider",

@@ -14,7 +14,7 @@ alias sk='skat'
 alias al='alacritty'
 
 # ——— Agents ———
-alias cc='claude'
+alias cc='claude --dangerously-skip-permissions'
 
 # ——— Node / Vite / pnpm ———
 alias nio="ni --prefer-offline"

@@ -71,6 +71,10 @@ ripgrep = "latest"
 # Native binary via mise's http:grok registry entry (same GCS artifacts as
 # https://x.ai/cli/install.sh). Prefer `mise up` over `grok update`.
 grok = "latest"
+# PiG — Pi rebuilt in Go as one native binary (no Node.js), runs Pi's TS
+# extensions unchanged. Registry has no `pig` alias → use the repo directly.
+# https://github.com/MichaelKinsy/PiG
+"github:MichaelKinsy/PiG" = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:@moonshot-ai/kimi-code" = "latest"
