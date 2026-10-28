@@ -54,6 +54,9 @@ neovim = "0.12.4"
 tree-sitter = "0.26.12"
 harper-ls = "2.8.0"
 "npm:unocss-language-server" = "latest"
+# x18n i18n language server (`x18n-lsp`): locale files + i18n keys in JS/TS/Vue
+# Low-download gate: new official package (x18n.dev), consciously approved.
+"npm:@x18n/lsp" = { version = "latest", allow_low_downloads = true }
 # TypeScript 7 compiler + language server in Rust (`--lsp -stdio`). nvim prefers
 # it for TS/JS outside Vue projects; editors opt in via their own tsdk setting.
 "npm:tsrs" = "latest"
