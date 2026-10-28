@@ -1,0 +1,5 @@
+# ~/.bashrc on macOS, deployed by mise/config.macos.toml.
+# Windows links dotfiles/.bashrc.win instead — the old $OSTYPE dispatcher that
+# lived in this file is gone; the platform split now happens in mise config.
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+command -v mise >/dev/null && eval "$(mise activate bash)"

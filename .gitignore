@@ -58,6 +58,9 @@ git/config.local
 git/kvoon9
 git/gitk
 
+# --- mise: shared config.toml + per-platform config.<os>.toml; machine-local overrides stay out ---
+mise/*.local.toml
+
 # --- dotfiles: exclude secrets / installer state / machine-local symlinks ---
 # windows/.bashrc now lives at dotfiles/.bashrc.win (shared via dotfiles), windows/ kept only for .secrets.bash
 windows/.secrets.bash
@@ -66,3 +69,7 @@ dotfiles/.secrets.bash
 dotfiles/.agents/.skill-lock.json
 dotfiles/.agents/skills/terminal-browser
 dotfiles/.agents/skills/ego-browser
+
+# --- editor swap files: whitelisted folders would otherwise track them ---
+*.swp
+*.swx

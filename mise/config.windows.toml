@@ -1,0 +1,12 @@
+# Windows-only tools. Loaded automatically on Windows because mise/miserc.toml
+# sets auto_env = true; shared tools stay in config.toml.
+# https://mise.jdx.dev/configuration/environments.html#platform-environments
+#
+# Nothing Windows-only yet: rust/cargo comes from scoop's rustup, and the
+# macOS-only tools (mr-boxington, icloudcli) live in config.macos.toml. Machine
+# specific tweaks belong in config.local.toml, which is gitignored.
+
+[dotfiles]
+# Windows links the Windows bash rc directly instead of going through a
+# $OSTYPE dispatcher. ~/.bash_profile (the otty shim) stays shared.
+"~/.bashrc" = { source = "~/.config/dotfiles/.bashrc.win" }

@@ -1,0 +1,9 @@
+# Read before any config file is loaded, so config-discovery keys belong here —
+# setting the same key under [settings] in config.toml has no effect.
+#
+# auto_env selects "platform config environments", which makes mise load
+# config.<os>, config.<os>-<arch> and config.unix files automatically. That is
+# what pulls in config.macos.toml on the Mac and config.windows.toml on Windows.
+# Default is off until mise 2027.6.0.
+# https://mise.jdx.dev/configuration/environments.html#platform-environments
+auto_env = true

@@ -1,0 +1,22 @@
+# macOS-only tools. Loaded automatically on macOS because mise/miserc.toml sets
+# auto_env = true; shared tools stay in config.toml.
+# https://mise.jdx.dev/configuration/environments.html#platform-environments
+
+[tools]
+# mr_boxington wraps `cargo` with mbx (shared build cache). Needs mise
+# 2026.9.2+; without the option mbx only works as `mbx build`.
+# https://mr-boxington.jdx.dev/setup
+rust = { version = "1", mr_boxington = true }
+mr-boxington = "latest"
+
+# iCloud Drive CLI. `go install` compiles it on macOS; its drive backend uses
+# syscall.Stat_t, which does not exist on Windows, so this cannot live in the
+# shared config.toml.
+"go:github.com/matysanchez/icloudcli/cmd/icloud-pp-cli" = "latest"
+
+[dotfiles]
+# Deployed only on macOS: zsh is the login shell here, and ~/.bashrc is the
+# macOS variant of the bash rc.
+"~/.zshrc" = {}
+"~/.zshenv" = {}
+"~/.bashrc" = { source = "~/.config/dotfiles/.bashrc.mac" }

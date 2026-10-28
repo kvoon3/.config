@@ -1,3 +1,7 @@
+# Shared config for every machine. OS-specific tools live in config.macos.toml /
+# config.windows.toml, which mise loads automatically because mise/miserc.toml
+# sets auto_env = true; config.local.toml (gitignored) is for machine-local
+# tweaks. See https://mise.jdx.dev/configuration/environments.html#platform-environments
 [settings]
 dotfiles.root = "~/.config/dotfiles"
 experimental = true
@@ -23,9 +27,9 @@ use_git_credentials = true
 github_attestations = false
 
 [dotfiles]
-"~/.zshrc" = {}
-"~/.zshenv" = {}
-"~/.bashrc" = {}
+# Shell rc files are deployed per platform: config.macos.toml supplies
+# ~/.zshrc, ~/.zshenv and the macOS ~/.bashrc, config.windows.toml supplies
+# the Windows ~/.bashrc. Everything else is the same on both.
 "~/.bash_profile" = {}
 "~/.gitconfig" = {}
 "~/.agents" = {}
@@ -35,10 +39,8 @@ github_attestations = false
 
 [tools]
 bun = "1.4.0"
-# mr_boxington wraps `cargo` with mbx (shared build cache). Needs mise
-# 2026.9.2+; without the option mbx only works as `mbx build`.
-# https://mr-boxington.jdx.dev/setup
-rust = { version = "1", mr_boxington = true }
+# The mr_boxington cargo wrapper is only enabled in config.macos.toml.
+rust = "1"
 uv = "latest"
 
 # ── Package managers ──
@@ -88,7 +90,9 @@ grok = "latest"
 # https://opencode.ai/v2/docs/
 "npm:@opencode/cli" = { version = "latest", allow_builds = ["@opencode/cli"] }
 "npm:agent-browser" = "latest"
-"npm:command-code" = "latest"
+# command-code is intentionally not installed: its npm bins are `cmd` and `cmdc`,
+# so mise's shims put a cmd.exe on PATH that shadows C:\Windows\System32\cmd.exe
+# and breaks everything spawning cmd (npm scripts, lazygit's title probe).
 "npm:freebuff" = "latest"
 
 # ── Node dev helpers ──
@@ -102,8 +106,6 @@ gh = "latest"
 # The go: backend shells out to `go install`, so the toolchain must be
 # managed here too (otherwise `mise up` fails with "go may be required").
 go = "latest"
-"go:github.com/matysanchez/icloudcli/cmd/icloud-pp-cli" = "latest"
-mr-boxington = "latest"
 claude = "latest"
 "npm:hunkdiff" = "0.23.0"
 git-lfs = "latest"
