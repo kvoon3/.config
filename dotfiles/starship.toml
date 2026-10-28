@@ -1,0 +1,9 @@
+# Starship config shared by the dotfiles shells (pointed at via STARSHIP_CONFIG
+# in dotfiles/.bashrc.win).
+#
+# On Windows every tool call goes through a mise shim, and resolving this global
+# manifest costs ~0.5s per invocation. That is over starship's default 500ms
+# command_timeout, so the prompt logged
+#   [WARN] Executing command "...\mise\shims\node.exe" timed out
+# and dropped the node segment whenever it rendered in a JS directory.
+command_timeout = 2000

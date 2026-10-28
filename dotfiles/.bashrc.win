@@ -1,8 +1,6 @@
-if [ -z "$BASH_PROFILE_SOURCED" ] && [ -f ~/.bash_profile ]; then
-  export BASH_PROFILE_SOURCED=1
-  source ~/.bash_profile
-fi
-
+# ~/.bash_profile already pulls this file in for login shells, so sourcing it
+# back from here would run this whole file twice (duplicate PATH entries, double
+# starship/fzf init). The old dispatcher-era block that did that is gone.
 source ~/.git-completion.bash 2>/dev/null
 source ~/.git-prompt.sh 2>/dev/null
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
@@ -21,11 +19,50 @@ alias ss="scripts"
 
 source "$HOME/.config/dotfiles/aliases.sh"
 
+# Starship renders through mise shims here (~0.5s per tool lookup), so it needs a
+# longer command_timeout than the 500ms default; see dotfiles/starship.toml.
+export STARSHIP_CONFIG="$HOME/.config/dotfiles/starship.toml"
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
 
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$HOME/.local/share/mise/shims:$PATH"
+
+# mise: on Windows the shims live in %LOCALAPPDATA%\mise\shims — the
+# ~/.local/share/mise path used on macOS does not exist here. mise already puts
+# that directory on the Windows PATH behind C:\Windows\System32, so only add it
+# when it is missing. Prepending it would move the shims in front of system32,
+# and any shim that shares a name with a system binary then shadows it — that is
+# how a shim for `cmd` broke lazygit and every npm script (the tool providing it,
+# npm:command-code, has since been dropped). `mise activate bash` is not used
+# either: it prepends a bin dir for every global tool, pushing PATH past the 8191
+# chars cmd.exe accepts. Per-directory versions still work through the shims;
+# use `mise x -- <cmd>` for a project's [env].
+mise_shims="$(cygpath -u "${LOCALAPPDATA:-$HOME/AppData/Local}")/mise/shims"
+if [ -d "$mise_shims" ]; then
+  case ":$PATH:" in
+    *":$mise_shims:"*) ;;
+    # Keep System32 ahead of the shims even in this fallback, for the cmd.exe
+    # reason above.
+    *) export PATH="/c/Windows/System32:$mise_shims:$PATH" ;;
+  esac
+fi
+
+# Git for Windows aliases node to `winpty node.exe` for mintty. winpty needs a
+# TTY, so non-interactive runs (`node -e ...`, pipes, here-docs, agent tools)
+# die with "stdin is not a tty". Keep winpty for interactive use only.
+# The alias has to be dropped before the function below is parsed: bash expands
+# aliases in a function definition's name, which would make `node() {` a syntax
+# error, and an `unalias` inside the same compound command is too late.
+unalias node 2>/dev/null || true
+if command -v node.exe >/dev/null 2>&1; then
+  node() {
+    if [ -t 0 ] && [ -t 1 ] && command -v winpty >/dev/null 2>&1; then
+      winpty node.exe "$@"
+    else
+      node.exe "$@"
+    fi
+  }
+fi
 
 [ -f "$HOME/.config/windows/.secrets.bash" ] && source "$HOME/.config/windows/.secrets.bash"
 [ -f "$HOME/.config/dotfiles/.secrets.bash" ] && source "$HOME/.config/dotfiles/.secrets.bash"
