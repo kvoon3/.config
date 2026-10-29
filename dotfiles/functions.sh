@@ -392,9 +392,9 @@ gcop() {
 
 serve() {
   if [ -z "$1" ]; then
-    live-server dist
+    bunx live-server dist
   else
-    live-server "$1"
+    bunx live-server "$1"
   fi
 }
 

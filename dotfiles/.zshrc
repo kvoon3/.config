@@ -3,7 +3,6 @@ ZSH_THEME="spaceship"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-z)
 
 alias zshconfig='nvim ~/.zshrc'
-alias alconfig='nvim ~/.config/alacritty/alacritty.toml'
 alias vimrc='nvim ~/.code.vimrc'
 alias obrc='nvim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/KevinNotes/.obsidian.vimrc'
 alias ngc='nvim /opt/homebrew/etc/nginx'

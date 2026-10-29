@@ -10,8 +10,6 @@ alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../'
 alias tree="find . \( -name 'node_modules' -o -name '.git' \) -prune -o -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias sk='skat'
-alias al='alacritty'
 
 # ——— Agents ———
 alias cc='claude --dangerously-skip-permissions'

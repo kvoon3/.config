@@ -11,7 +11,6 @@ source "$HOME/.config/dotfiles/mirrors.sh"
 alias bashconfig='nvim ~/.config/dotfiles/.bashrc.win'
 alias vscodevimrc='code C://Users/admin/i/vscode-vimrc/.vimrc'
 alias obconfig='code C://Users/admin/iCloudDrive/iCloud~md~obsidian/KevinNotes/.obsidian.vimrc'
-alias alconfig='code C://Users/admin/AppData/Roaming/alacritty/alacritty.toml'
 alias nvimconfig='nvim ~/appdata/local/nvim'
 alias im-select='C://im-select/im-select-imm'
 alias scripts="cat package.json | jq '.scripts'"
