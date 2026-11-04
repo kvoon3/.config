@@ -18,7 +18,6 @@ alias ggp='git grep'
 alias ggpa='git grep -npW'
 alias gai='git add -i'
 
-source "$HOME/.config/dotfiles/proxy.sh"
 source "$HOME/.config/dotfiles/mirrors.sh"
 source "$HOME/.config/dotfiles/aliases.sh"
 source "$HOME/.config/dotfiles/functions.sh"

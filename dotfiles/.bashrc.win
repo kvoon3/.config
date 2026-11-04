@@ -5,7 +5,6 @@ source ~/.git-completion.bash 2>/dev/null
 source ~/.git-prompt.sh 2>/dev/null
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-source "$HOME/.config/dotfiles/proxy.sh"
 source "$HOME/.config/dotfiles/mirrors.sh"
 
 alias bashconfig='nvim ~/.config/dotfiles/.bashrc.win'
