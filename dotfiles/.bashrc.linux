@@ -1,0 +1,41 @@
+# Deployed to ~/.bashrc by mise/config.linux.toml + mise/miserc.toml (auto_env).
+# This is a symlink target, so it replaces the distro's ~/.bashrc wholesale;
+# Ubuntu's default was backed up to ~/.bashrc.dist-backup before the switch.
+#
+# Linux/WSL counterpart of dotfiles/.bashrc.win and dotfiles/.bashrc.mac.
+# Ubuntu's default has nothing worth carrying over (bash-completion stays
+# loaded through /etc/bash.bashrc, which Debian sources for interactive shells).
+
+# mise. ~/.local/bin/mise comes from the standalone installer (no root needed),
+# since sudo needs a password on this box.
+case ":$PATH:" in
+*":$HOME/.local/bin:"*) ;;
+*) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
+
+# On WSL, a bash started from a Windows directory inherits a cwd under
+# /mnt/c/Users/<name>, and mise then walks up and treats that as this user's
+# home -- it loads the Windows-host .config/mise/config.toml next to this
+# repo's Linux ones. That file pins Windows-only versions and would be
+# installed into the Linux home. Ignore it; the Windows install keeps its own
+# config. A glob covers whatever the Windows profile is called, and there is
+# no /mnt/c on a native Linux box, so this line is inert there.
+# Must come before any mise call: `mise activate` itself reads the config stack.
+export MISE_IGNORED_CONFIG_PATHS="/mnt/c/Users/*/.config/mise/config.toml"
+
+# Keep XDG resolves anchored in the Linux home even when the shell starts on
+# /mnt/c; ~/.config is this repo's checkout either way.
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# mise activates here on Linux, unlike on Windows where .bashrc.win relies on
+# the shims already sitting on PATH (activating would push PATH past cmd.exe's
+# 8191-char limit). Also loads mise/config.linux.toml via miserc.toml's auto_env.
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi
+
+# Shared shell config. aliases.sh is deliberately alias-only and functions.sh
+# is source-safe, so both load on 3.2-style bash as well (macOS ships 3.2).
+for f in aliases.sh functions.sh; do
+  [ -f "$HOME/.config/dotfiles/$f" ] && . "$HOME/.config/dotfiles/$f"
+done

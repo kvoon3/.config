@@ -1,0 +1,8 @@
+# Linux/WSL counterpart of dotfiles/.zshenv (macOS). Deployed to ~/.zshenv by
+# mise/config.linux.toml. Every zsh process reads this file, including
+# non-interactive scripts, so keep it cheap and side-effect free.
+
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# Vite+ bin (https://viteplus.dev) — only present on machines that installed it.
+[ -f "$HOME/.vite-plus/env" ] && . "$HOME/.vite-plus/env"

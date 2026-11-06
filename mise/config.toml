@@ -28,8 +28,9 @@ github_attestations = false
 
 [dotfiles]
 # Shell rc files are deployed per platform: config.macos.toml supplies
-# ~/.zshrc, ~/.zshenv and the macOS ~/.bashrc, config.windows.toml supplies
-# the Windows ~/.bashrc. Everything else is the same on both.
+# ~/.zshrc, ~/.zshenv and the macOS ~/.bashrc; config.linux.toml supplies the
+# Linux/WSL ~/.zshrc, ~/.zshenv and ~/.bashrc; config.windows.toml supplies the
+# Windows ~/.bashrc. Everything else is the same everywhere.
 "~/.bash_profile" = {}
 "~/.gitconfig" = {}
 "~/.agents" = {}
@@ -53,30 +54,20 @@ pnpm = "latest"
 neovim = "0.12.4"
 tree-sitter = "0.26.12"
 harper-ls = "2"
-"npm:unocss-language-server" = "latest"
+# UnoCSS language server. Official package, but under the 1000/weekly download
+# gate, so approve this one explicitly instead of turning the gate off globally.
+"npm:unocss-language-server" = { version = "latest", allow_low_downloads = true }
 # x18n i18n language server (`x18n-lsp`): locale files + i18n keys in JS/TS/Vue
 # Low-download gate: new official package (x18n.dev), consciously approved.
 "npm:@x18n/lsp" = { version = "latest", allow_low_downloads = true }
 # TypeScript 7 compiler + language server in Rust (`--lsp -stdio`). nvim prefers
 # it for TS/JS outside Vue projects; editors opt in via their own tsdk setting.
-"npm:tsrs" = "latest"
-
-# ── LSP servers & linters ──
-# nvim starts these in the *edited* project's cwd, so a project-local mise.toml
-# cannot provide them: mise shims resolve versions per directory and would fail
-# outside it. Keep them global.
-lua-language-server = "3"
-"npm:typescript-language-server" = "6"
-"npm:@vue/language-server" = "3"
-"npm:vscode-langservers-extracted" = "4" # css, html, json, eslint servers
-"npm:oxlint" = "1"
-oxfmt = "0"
-"github:tekumara/typos-lsp" = "0"
-rust-analyzer = "2026"
+# Pinned, and exempt from aube's trust policy: 0.0.0-bootstrap.0 shipped with
+# staged publish approval while this beta only carries a trusted publisher, which
+# the no-downgrade rule reads as weaker evidence. Re-review before bumping.
+"npm:tsrs" = { version = "0.22.0-ts7.1.0-beta", trust_policy_excludes = ["tsrs@0.22.0-ts7.1.0-beta"] }
 
 # ── Git / CLI utilities ──
-# Required by the rex-fzf-url plugin (picker for URLs in pane scrollback).
-fzf = "latest"
 gitu = "0"
 just = "latest"
 lazygit = "latest"
@@ -103,7 +94,8 @@ grok = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:@moonshot-ai/kimi-code" = "latest"
-"npm:@kvoon/bb-cli" = "latest"
+# bb-cli: own package, far below the download threshold — per-package approval.
+"npm:@kvoon/bb-cli" = { version = "latest", allow_low_downloads = true }
 # OpenCode 2 (npm package). V1 and V2 both own the `opencode` command, so
 # only one may be installed: the npm package ships a native binary via
 # optionalDependencies and its postinstall promotes it to `opencode` and
@@ -113,16 +105,13 @@ grok = "latest"
 # https://opencode.ai/v2/docs/
 "npm:@opencode/cli" = { version = "latest", allow_builds = ["@opencode/cli"] }
 "npm:agent-browser" = "latest"
-# Computer use for AI agents: read and operate desktop apps through the OS
-# accessibility tree. Ships native binaries; its postinstall swaps the Node
-# launcher for a link to the native binary (146 ms → 21 ms per call), so
-# approve the script. macOS needs Accessibility permission
-# (`agent-desktop permissions --guide`).
-"npm:agent-desktop" = { version = "latest", allow_builds = ["agent-desktop"] }
 # command-code is intentionally not installed: its npm bins are `cmd` and `cmdc`,
 # so mise's shims put a cmd.exe on PATH that shadows C:\Windows\System32\cmd.exe
 # and breaks everything spawning cmd (npm scripts, lazygit's title probe).
-"npm:freebuff" = "latest"
+# freebuff (Codebuff): 0.0.11 shipped from the trusted workflow, later releases
+# carry no trust evidence at all — the no-downgrade rule rejects that. Pinned to
+# the reviewed release; re-review before bumping.
+"npm:freebuff" = { version = "0.2.36", trust_policy_excludes = ["freebuff@0.2.36"] }
 
 # ── Node dev helpers ──
 node = "24"
@@ -130,7 +119,8 @@ nub = "latest"
 "npm:tsx" = "latest"
 "aqua:sharkdp/fd" = "latest"
 gh = "latest"
-"npm:@kvoon/gop" = "0.1.0"
+# gop: own package, 3 weekly downloads — per-package approval.
+"npm:@kvoon/gop" = { version = "0.1.0", allow_low_downloads = true }
 "npm:ctx7" = "latest"
 # The go: backend shells out to `go install`, so the toolchain must be
 # managed here too (otherwise `mise up` fails with "go may be required").

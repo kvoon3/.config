@@ -1,0 +1,20 @@
+# Linux/WSL-only tools and dotfiles. Loaded automatically because miserc.toml
+# sets auto_env = true; shared tools and dotfiles stay in config.toml.
+# Only include tools that cannot live in the shared list — everything
+# platform-neutral belongs in config.toml.
+
+[tools]
+# git/config sets delta as core.pager and the interactive diffFilter, and
+# dotfiles/.gitconfig declares an lfs filter, so both must exist on Linux.
+delta = "latest"
+git-lfs = "latest"
+
+[dotfiles]
+# The Linux shell rc. ~/.bashrc itself stays the distro file and sources this
+# at the end, so bash-completion and the Debian POSIX guards are untouched.
+"~/.bashrc" = { source = "~/.config/dotfiles/.bashrc.linux" }
+
+# zsh is used on WSL. The macOS versions of these files are deployed from
+# config.macos.toml and contain Mac-only paths, so Linux gets its own pair.
+"~/.zshrc" = { source = "~/.config/dotfiles/.zshrc.linux" }
+"~/.zshenv" = { source = "~/.config/dotfiles/.zshenv.linux" }
