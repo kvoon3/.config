@@ -1,6 +1,6 @@
 {
-  "defaultModel": "remote-magpie/group/deepseek-flash",
-  "defaultProvider": "magpie",
+  "defaultModel": "glm-5.3-flash",
+  "defaultProvider": "zai-coding-cn",
   "packages": [
     "npm:pi-commandcode-provider",
     "npm:pi-simplify",
