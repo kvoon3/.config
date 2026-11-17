@@ -52,7 +52,7 @@ pnpm = "latest"
 # ── Editors & terminal ──
 neovim = "0.12.4"
 tree-sitter = "0.26.12"
-harper-ls = "2.8.0"
+harper-ls = "2"
 "npm:unocss-language-server" = "latest"
 # x18n i18n language server (`x18n-lsp`): locale files + i18n keys in JS/TS/Vue
 # Low-download gate: new official package (x18n.dev), consciously approved.
@@ -60,6 +60,19 @@ harper-ls = "2.8.0"
 # TypeScript 7 compiler + language server in Rust (`--lsp -stdio`). nvim prefers
 # it for TS/JS outside Vue projects; editors opt in via their own tsdk setting.
 "npm:tsrs" = "latest"
+
+# ── LSP servers & linters ──
+# nvim starts these in the *edited* project's cwd, so a project-local mise.toml
+# cannot provide them: mise shims resolve versions per directory and would fail
+# outside it. Keep them global.
+lua-language-server = "3"
+"npm:typescript-language-server" = "6"
+"npm:@vue/language-server" = "3"
+"npm:vscode-langservers-extracted" = "4" # css, html, json, eslint servers
+"npm:oxlint" = "1"
+oxfmt = "0"
+"github:tekumara/typos-lsp" = "0"
+rust-analyzer = "2026"
 
 # ── Git / CLI utilities ──
 gitu = "0"
