@@ -3,6 +3,18 @@
     "context7": {
       "url": "https://mcp.context7.com/mcp"
     },
+    "nutstore": {
+      "command": "/Users/kvoon/.local/share/mise/shims/uvx",
+      "args": [
+        "--from",
+        "nutstore-mcp",
+        "nutstore-mcp"
+      ],
+      "env": {
+        "NUTSTORE_PASS": "${NUTSTORE_PASS}",
+        "NUTSTORE_USER": "${NUTSTORE_USER}"
+      }
+    },
     "rea": {
       "type": "stdio",
       "command": "npx",

@@ -289,5 +289,9 @@ enabled = false
 [apps.asdk_app_69c4d4163c8c819183a9bdcf6d2ac262]
 enabled = false
 
+[mcp_servers.nutstore]
+command = "/Users/kvoon/.local/share/mise/shims/uvx"
+args = ["--from", "nutstore-mcp", "nutstore-mcp"]
+
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
