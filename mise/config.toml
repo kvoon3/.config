@@ -83,6 +83,11 @@ lazygit = "latest"
 # every version lookup). Point at the official github:herdrdev/herdr
 # directly to skip the broken alias and the 403 WARN noise.
 "github:herdrdev/herdr" = "latest"
+
+# herdr's prefix keymap as a Rex config. The http: backend puts the CLI on
+# PATH, and its postinstall writes the plugin file and the init.lua line.
+# REF pins the downloaded keymap to the same tag; bump both together.
+"http:rex-herdr-keybinding" = { version = "0.1.0", url = "https://raw.githubusercontent.com/kvoon3/rex-herdr-keybinding/v{{ version }}/rex-herdr-keybinding", bin = "rex-herdr-keybinding", postinstall = "REX_HERDR_KEYBINDING_REF=v0.1.0 rex-herdr-keybinding install" }
 ripgrep = "latest"
 
 # ── AI agents ──
