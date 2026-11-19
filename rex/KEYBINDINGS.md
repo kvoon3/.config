@@ -98,6 +98,10 @@ Rex 没有键位帮助覆盖层，命令面板是最接近的入口。Rex 也没
 | navigate 模式 `up/down` | 跨 workspace 移动 | Rex 没有 navigate 模式 |
 | `ctrl+alt+*` | 免前缀直连键 | 当前只做了前缀方案，直连键留待以后 |
 
+## 默认未绑定的可选动作
+
+这些 herdr 动作默认不绑键，我们也没有对应需求，保持空白即可。`open_worktree`、`remove_worktree`、`previous_workspace`、`next_workspace`、`previous_agent`、`next_agent`、`focus_agent`、`move_tab_previous`、`move_tab_next`、`switch_workspace`、`clear_pane`、`last_pane`、`resize_pane_left/down/up/right`。状态记为不适用。
+
 ## Rex 独有的补充
 
 | Rex 键 | Rex 动作 | 说明 |
