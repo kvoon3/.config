@@ -10,5 +10,5 @@ See https://github.com/kvoon3/rex-herdr-keybinding.
 
 The keymap is installed to `~/.config/rex/plugins/rex-herdr-keybinding`, which
 is machine-local and stays out of this repo. Manage it with
-`rex-herdr-keybinding install`, `enable`, `disable`, or `uninstall`. Add
-`--prefix` to use a prefix other than `ctrl+b`.
+`rex-herdr-keybinding install`, `enable`, `disable`, or `uninstall`. Change the
+prefix by editing the `setup` call in `init.lua`.
