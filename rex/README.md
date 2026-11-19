@@ -2,8 +2,8 @@
 
 Live Rex configuration for this machine. `init.lua` is the file Rex loads.
 
-It holds two managed blocks. `leaf` owns the first. The second is written by
-the rex-herdr-keybinding CLI and only loads the keymap.
+It holds the `leaf` managed block and one `dofile` line added by the
+rex-herdr-keybinding CLI.
 
 The keymap and the herdr to Rex mapping table live upstream.
 See https://github.com/kvoon3/rex-herdr-keybinding.
