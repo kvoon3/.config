@@ -75,6 +75,8 @@ oxfmt = "0"
 rust-analyzer = "2026"
 
 # ── Git / CLI utilities ──
+# Required by the rex-fzf-url plugin (picker for URLs in pane scrollback).
+fzf = "latest"
 gitu = "0"
 just = "latest"
 lazygit = "latest"
@@ -106,6 +108,12 @@ grok = "latest"
 # https://opencode.ai/v2/docs/
 "npm:@opencode/cli" = { version = "latest", allow_builds = ["@opencode/cli"] }
 "npm:agent-browser" = "latest"
+# Computer use for AI agents: read and operate desktop apps through the OS
+# accessibility tree. Ships native binaries; its postinstall swaps the Node
+# launcher for a link to the native binary (146 ms → 21 ms per call), so
+# approve the script. macOS needs Accessibility permission
+# (`agent-desktop permissions --guide`).
+"npm:agent-desktop" = { version = "latest", allow_builds = ["agent-desktop"] }
 # command-code is intentionally not installed: its npm bins are `cmd` and `cmdc`,
 # so mise's shims put a cmd.exe on PATH that shadows C:\Windows\System32\cmd.exe
 # and breaks everything spawning cmd (npm scripts, lazygit's title probe).
