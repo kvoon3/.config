@@ -5,6 +5,9 @@ dofile("/Users/kvoon/.config/rex/plugins/leaf/init.lua").setup({ bin = { "/Users
 -- open: idle classic
 -- <<< leaf <<<
 
+-- >>> rex-herdr-keybinding >>>
+-- herdr's ctrl+b keymap for Rex.
+
 local bindings = {
   -- panes
   { "ctrl+b>z", "pane.zoom" },
@@ -13,7 +16,6 @@ local bindings = {
   { "ctrl+b>shift+j", "pane.move", { direction = "down" } },
   { "ctrl+b>shift+k", "pane.move", { direction = "up" } },
   { "ctrl+b>shift+l", "pane.move", { direction = "right" } },
-
   { "ctrl+b>tab", "pane.focus_next" },
   { "ctrl+b>shift+tab", "pane.focus_previous" },
 
@@ -42,15 +44,15 @@ local bindings = {
   { "ctrl+b>g", "pane.go_to" },
 
   -- misc
+  { "ctrl+b>s", "client.settings" },
+  { "ctrl+b>shift+p", "pane.rename" },
+  { "ctrl+b>shift+r", "client.config.reload" },
   { "ctrl+b>b", "client.sidebar.toggle" },
   { "ctrl+b>q", "client.visibility.toggle" },
   { "ctrl+b>shift+/", "client.palette.toggle" },
   { "ctrl+b>t", "pane.new_floating" },
   { "ctrl+b>[", "client.find.open" },
   { "ctrl+b>ctrl+b", "pane.send_key", { key = "ctrl+b" } },
-  { "ctrl+b>s", "client.settings" },
-  { "ctrl+b>shift+p", "pane.rename" },
-  { "ctrl+b>shift+r", "client.config.reload" },
 }
 
 for _, b in ipairs(bindings) do rex.bind(b[1], b[2], b[3]) end
@@ -64,3 +66,4 @@ rex.bind("resize/j", "pane.resize", { direction = "down" })
 rex.bind("resize/k", "pane.resize", { direction = "up" })
 rex.bind("resize/l", "pane.resize", { direction = "right" })
 rex.bind("resize/enter", "client.mode.exit")
+-- <<< rex-herdr-keybinding <<<
