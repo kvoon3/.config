@@ -80,7 +80,7 @@ lazygit = "latest"
 # herdr's prefix keymap as a Rex config. The http: backend puts the CLI on
 # PATH, and its postinstall writes the plugin file and the init.lua line.
 # REF pins the downloaded keymap to the same tag; bump both together.
-"http:rex-herdr-keybinding" = { version = "0.2.0", url = "https://raw.githubusercontent.com/kvoon3/rex-herdr-keybinding/v{{ version }}/rex-herdr-keybinding", bin = "rex-herdr-keybinding", postinstall = "REX_HERDR_KEYBINDING_REF=v0.2.0 rex-herdr-keybinding install" }
+"http:rex-herdr-keybinding" = { version = "0.2.1", url = "https://raw.githubusercontent.com/kvoon3/rex-herdr-keybinding/v{{ version }}/rex-herdr-keybinding", bin = "rex-herdr-keybinding", postinstall = "REX_HERDR_KEYBINDING_REF=v0.2.1 rex-herdr-keybinding install" }
 ripgrep = "latest"
 
 # ── AI agents ──
