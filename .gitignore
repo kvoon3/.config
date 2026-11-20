@@ -29,8 +29,6 @@
 !windows/**
 !wezterm/
 !wezterm/**
-!notes/
-!notes/**
 !rex/
 !rex/**
 
@@ -74,6 +72,21 @@ dotfiles/.agents/skills/ego-browser
 
 # --- rex: track init.lua + keybinding map; plugins are installed per machine ---
 rex/plugins/
+
+# --- notes: this machine's deep-dive write-ups, deliberately untracked ---
+notes/
+
+# --- agent skills: vendor-installed CUA stacks are machine-local, not config ---
+dotfiles/.agents/skills/cua-driver/
+dotfiles/.agents/skills/cua-sandboxes/
+dotfiles/.agents/skills/cua-spaces/
+dotfiles/.agents/skills/cua-volume/
+dotfiles/.agents/skills/gui-automation/
+
+# --- pi: the model catalog and settings are written per machine (baseUrl, deviceId,
+# catalog, extension versions), so they stay out of the shared tree ---
+dotfiles/.pi/agent/models.json
+dotfiles/.pi/agent/settings.json
 
 # --- editor swap files: whitelisted folders would otherwise track them ---
 *.swp
