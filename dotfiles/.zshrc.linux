@@ -54,3 +54,17 @@ fi
 # this export and dotfiles/bin/terminal-browser-ab-cdp once that is fixed.
 export TERMINAL_BROWSER_AGENT="$HOME/.config/dotfiles/bin/terminal-browser-ab-cdp"
 
+
+# >>> magpie WSL claude guard >>>
+# When Claude Code runs in WSL with the Windows home as cwd, it would load
+# C:\Users\a1176\.claude\settings.json as *project* settings. That file pins
+# ANTHROPIC_BASE_URL to 127.0.0.1, which is not the magpie gateway from inside
+# WSL (NAT). Keep magpie's WSL user settings (host gateway IP) in charge there.
+claude() {
+  if [ "$PWD" = "/mnt/c/Users/a1176" ] && [[ " $* " != *" --setting-sources "* ]]; then
+    command claude --setting-sources user "$@"
+  else
+    command claude "$@"
+  fi
+}
+# <<< magpie WSL claude guard <<<
