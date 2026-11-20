@@ -451,6 +451,10 @@ psh() {
 }
 
 psh51() {
+  if ! command -v powershell.exe >/dev/null 2>&1; then
+    echo 'psh51: powershell.exe not on PATH (Windows interop only)' >&2
+    return 1
+  fi
   _psh_env
   powershell.exe -NoLogo "$@"
 }
