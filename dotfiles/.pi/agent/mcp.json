@@ -1,19 +1,39 @@
 {
   "mcpServers": {
+    "magpie-web-search": {
+      "command": "/Applications/magpie.app/Contents/MacOS/magpie",
+      "args": [
+        "mcp",
+        "search"
+      ]
+    },
+    "magpie-vision": {
+      "command": "/Applications/magpie.app/Contents/MacOS/magpie",
+      "args": [
+        "mcp",
+        "vision"
+      ]
+    },
+    "magpie-memory": {
+      "command": "/Applications/magpie.app/Contents/MacOS/magpie",
+      "args": [
+        "mcp",
+        "memory"
+      ]
+    },
+    "magpie-image": {
+      "command": "/Applications/magpie.app/Contents/MacOS/magpie",
+      "args": [
+        "mcp",
+        "image"
+      ]
+    },
+    "android-use-by-andromeld": {
+      "command": "/Applications/AndroMeld.app/Contents/MacOS/andromeld-mcp-server",
+      "args": []
+    },
     "context7": {
       "url": "https://mcp.context7.com/mcp"
-    },
-    "nutstore": {
-      "command": "/Users/kvoon/.local/share/mise/shims/uvx",
-      "args": [
-        "--from",
-        "nutstore-mcp",
-        "nutstore-mcp"
-      ],
-      "env": {
-        "NUTSTORE_PASS": "${NUTSTORE_PASS}",
-        "NUTSTORE_USER": "${NUTSTORE_USER}"
-      }
     },
     "rea": {
       "type": "stdio",
