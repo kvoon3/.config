@@ -4,7 +4,8 @@ This is a personal dotfiles repository rooted at `~/.config`.
 
 ## Rules
 
-- **Deny-by-default**: `.gitignore` ignores everything except explicitly whitelisted paths. Currently tracked: `dotfiles/`, `ghostty/`, `git/`, `herdr/`, `karabiner/`, `kitty/`, `lazygit/`, `mise/`, `notes/`, `rex/`, `wezterm/`.
+- **Deny-by-default**: `.gitignore` ignores everything except explicitly whitelisted paths. Currently tracked: `dotfiles/`, `ghostty/`, `git/`, `herdr/`, `karabiner/`, `kitty/`, `lazygit/`, `mise/`, `rex/`, `wezterm/`.
+- `notes/` is deliberately untracked: it holds this machine's deep-dive write-ups, not portable config.
 - **Do not add new top-level folders without user approval.** If asked to add one, update `.gitignore` to whitelist it.
 - **Never commit secrets or machine-local state**: logs, sockets, session files, credentials, backups, etc.
 - **Keep changes minimal**: this repo is for stable config, not experiments.
@@ -46,11 +47,32 @@ Mode is ever enabled, the symlink variant documented in the shim's header commen
 
 ## Windows-side shells from WSL: `pwsh`, not `powershell.exe`
 
-Windows-side commands run in PowerShell 7 — `pwsh.exe` (7.6.9, on the Windows PATH) resolves from WSL by
-name. `powershell.exe` is 5.1: UTF-16LE + BOM output, no `??` / `-Parallel`, slower — and `NetSecurity` ships
+Windows-side commands run in PowerShell 7 — `pwsh.exe` (on the Windows PATH) resolves from WSL by
+name. `powershell.exe` is 5.1: UTF-16LE + BOM output by default (the profile moves `Out-File`/`Set-Content`/`Add-Content` to UTF-8), no `??` / `-Parallel`, slower — and `NetSecurity` ships
 in both, so nothing is gained by staying. Not via mise (WSL would get the Linux build, no Windows-only
 modules). Firewall changes need elevation: spawn `Start-Process pwsh -Verb RunAs` and have the child write
-its result to a file, since the UAC prompt is answered on the Windows desktop. Details: `notes/windows.md`.
+its result to a file, since the UAC prompt is answered on the Windows desktop. From a WSL shell use the
+`psh` helper (`psh51` only to reproduce what 5.1-based tooling sees). Details: `notes/windows.md`.
+
+## PowerShell: repo file is the source, Windows side is a shim
+
+`dotfiles/powershell/profile.ps1` is the single source of truth. `%USERPROFILE%\Documents\PowerShell\profile.ps1`
+(pwsh 7) and `%USERPROFILE%\Documents\WindowsPowerShell\profile.ps1` (5.1) are copies of
+`dotfiles/powershell/profile.shim.ps1`, which reads the repo file as text and `Invoke-Expression`s it.
+Dot-sourcing is not an option: `ExecutionPolicy RemoteSigned` refuses to run an unsigned *script file*
+over UNC ("is not digitally signed"), while evaluating text needs no policy change and no `Unblock-File`.
+Edit the repo file; re-copy the shim only when the shim itself changes.
+
+- Non-interactive shells get agent semantics: `$PSNativeCommandUseErrorActionPreference` (7.3+), plain
+  UTF-8 output, no progress bars, **no aliases**. The prompt, PSReadLine and shortcuts live behind
+  `Initialize-InteractiveProfile`. Keep that split — an alias that shadows a cmdlet silently breaks agents.
+- Tool availability comes from `%LOCALAPPDATA%\mise\shims` appended to the **user** PATH in the registry,
+  not from `mise activate` (which prepends one path per installed tool). Append only: the shims must stay
+  behind `C:\Windows\System32` so they cannot shadow system binaries.
+- `psh` (PowerShell 7) and `psh51` (Windows PowerShell 5.1) in `dotfiles/functions.sh` run a Windows
+  PowerShell command from WSL: native cwd, strict exit codes via `PSH_STRICT`/`WSLENV`.
+
+Details, measured startup cost, and the Windows-Terminal probe for the interactive branch: `notes/windows.md`.
 
 ## Verifying GUI rendering from WSL
 

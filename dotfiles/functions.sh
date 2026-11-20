@@ -402,6 +402,59 @@ kp() {
   kill -9 $(lsof -t -i:"$1")
 }
 
+# -------------------------------- #
+# Windows interop (WSL -> PowerShell)
+# -------------------------------- #
+
+# A Windows process launched from WSL inherits the Linux cwd. For anything
+# outside /mnt/c that becomes a UNC path (\\wsl.localhost\...), which every
+# cmd.exe / git child then warns about, and which makes mise walk up into the WSL
+# config and error "Config files ... are not trusted". Do not pass
+# -WorkingDirectory here: it changes PowerShell's $PWD but not the process cwd,
+# so children still inherit the UNC path. The profile rewrites both to
+# %USERPROFILE% instead (dotfiles/powershell/profile.ps1, notes/windows.md), and
+# leaves an already-native cwd alone -- /mnt/c paths arrive translated.
+
+# WSL does not forward arbitrary environment variables to Windows processes --
+# they have to be listed in WSLENV. PSH_STRICT=1 makes the profile set
+# $ErrorActionPreference='Stop' for the run, so a failed command exits non-zero
+# instead of printing a warning and exiting 0. Append rather than overwrite:
+# other tooling may already populate WSLENV.
+_psh_env() {
+  case "$WSLENV" in
+    *PSH_STRICT*) ;;
+    '') WSLENV='PSH_STRICT' ;;
+    *) WSLENV="$WSLENV:PSH_STRICT" ;;
+  esac
+  export WSLENV PSH_STRICT=1
+}
+
+_pwsh_exe() {
+  # Windows installs it as pwsh.exe; WSL PATH exposes it with the extension, so
+  # `command -v pwsh` alone is not enough on this machine.
+  command -v pwsh 2>/dev/null || command -v pwsh.exe 2>/dev/null
+}
+
+# psh = PowerShell 7 (the default for Windows-side work in this repo),
+# psh51 = Windows PowerShell 5.1 (what most Windows tooling launches internally;
+# 5.1 has no $PSNativeCommandUseErrorActionPreference, so native failures there
+# still need an explicit $LASTEXITCODE check).
+psh() {
+  local exe
+  exe="$(_pwsh_exe)"
+  if [ -z "$exe" ]; then
+    echo 'psh: pwsh/pwsh.exe not on PATH (install PowerShell 7)' >&2
+    return 1
+  fi
+  _psh_env
+  "$exe" -NoLogo "$@"
+}
+
+psh51() {
+  _psh_env
+  powershell.exe -NoLogo "$@"
+}
+
 if [ -n "$ZSH_VERSION" ]; then
   setopt aliases
 else
