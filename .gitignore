@@ -88,6 +88,11 @@ dotfiles/.agents/skills/gui-automation/
 dotfiles/.pi/agent/models.json
 dotfiles/.pi/agent/settings.json
 
+# --- rex: init.lua and ssh_config are written per machine by their installers ---
+rex/init.lua
+rex/*.bak
+rex/ssh_config
+
 # --- editor swap files: whitelisted folders would otherwise track them ---
 *.swp
 *.swx
