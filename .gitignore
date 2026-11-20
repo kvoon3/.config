@@ -31,6 +31,8 @@
 !wezterm/**
 !notes/
 !notes/**
+!rex/
+!rex/**
 
 # --- herdr: exclude runtime / generated / machine-local files ---
 herdr/*.log
@@ -69,6 +71,9 @@ dotfiles/.secrets.bash
 dotfiles/.agents/.skill-lock.json
 dotfiles/.agents/skills/terminal-browser
 dotfiles/.agents/skills/ego-browser
+
+# --- rex: track init.lua + keybinding map; plugins are installed per machine ---
+rex/plugins/
 
 # --- editor swap files: whitelisted folders would otherwise track them ---
 *.swp
